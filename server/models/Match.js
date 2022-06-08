@@ -5,6 +5,7 @@ const matchSchema = new Schema(
         matchId: {
             type: Number,
             required: true,
+            unique: true,
         },
         matchDate: {
             type: Number,

@@ -1,5 +1,6 @@
 import { useAuth } from "../util/auth";
 
+
 export default function Home() {
   const { isLoggedIn, user } = useAuth();
   return (
