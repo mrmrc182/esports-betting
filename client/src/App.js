@@ -15,7 +15,21 @@ function App() {
       <Router>
         <AuthProvider>
           <Header />
-
+          <Routes>
+            {/* <Route path="/" element={<Home />} /> */}
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<SignUp />} />
+            {/* Use <RequiredAuth> for pages that should only be accessible to a
+            user that has logged in.*/}
+            <Route
+              path="/protected"
+              element={
+                <RequireAuth>
+                  <ProtectedPageExample />
+                </RequireAuth>
+              }
+            />
+          </Routes>
         </AuthProvider>
       </Router>
     </ApolloProvider>
