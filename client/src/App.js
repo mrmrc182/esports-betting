@@ -16,7 +16,7 @@ function App() {
         <AuthProvider>
           <Header />
           <Routes>
-            {/* <Route path="/" element={<Home />} /> */}
+            <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
             {/* Use <RequiredAuth> for pages that should only be accessible to a
