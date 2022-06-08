@@ -11,21 +11,9 @@ const betSchema = new Schema(
             type: Number,
             required: true,
         },
-        matchDate: {
+        winnerChoice: {
             type: Number,
             required: true,
-        },
-        teamA: {
-            type: Number,
-            required: true,
-        },
-        teamB: {
-            type: Number,
-            required: true,
-        },
-        winner: {
-            type: Number,
-            required: false,
         },
         openBet: {
             type: Boolean,
@@ -35,6 +23,10 @@ const betSchema = new Schema(
         createdAt: {
             type: Number,
             default: Date.now(),
+        },
+        matchBet: {
+            type: Schema.Types.ObjectId,
+            ref: 'Match'
         },
     },
     {
@@ -46,4 +38,4 @@ const betSchema = new Schema(
 
 const Bet = model("Bet", betSchema);
 
-module.exports = User;
+module.exports = Bet;
