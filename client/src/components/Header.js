@@ -20,9 +20,9 @@ export default function Header() {
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="ms-auto" id="links">
                             <Nav.Link as={Link} to="/">Home</Nav.Link>
-                            {isLoggedIn && <Nav.Link as={Link} to="/project">Profile</Nav.Link>}
+                            {isLoggedIn && <Nav.Link as={Link} to="/profile">Profile</Nav.Link>}
                             <Nav.Link as={Link} to="/contact">Matches</Nav.Link>
-                            {isLoggedIn && <Nav.Link as={Link} to="/resume">Leaderboard</Nav.Link>}
+                            {isLoggedIn && <Nav.Link as={Link} to="/leaderboard">Leaderboard</Nav.Link>}
                             {isLoggedIn || <Nav.Link as={Link} to="/login">Login</Nav.Link>}
                             {isLoggedIn || <Nav.Link as={Link} to="/signup">Signup</Nav.Link>}
                             {isLoggedIn && <Nav.Link as={Button} onClick={logout}>Logout</Nav.Link>}
