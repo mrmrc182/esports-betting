@@ -25,7 +25,7 @@ const matchSchema = new Schema(
         bets: [
             {
                 type: Schema.Types.ObjectId,
-                ref: [Bet],
+                ref: 'Bet',
             }
         ],
     },
