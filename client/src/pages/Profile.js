@@ -1,15 +1,16 @@
 import React from "react";
 import { Accordion } from "react-bootstrap";
+import "../styles/Profile.css";
 
 export default function Profile() {
   return (
-    <div>
+    <div  className="center">
       <h1>Hello username!</h1>
       <br></br>
       <h1>Open Bets</h1>
       <Accordion defaultActiveKey="0">
-        <Accordion.Item eventKey="0">
-          <Accordion.Header>FaZe vs Cloud9</Accordion.Header>
+        <Accordion.Item className="center" eventKey="0">
+          <Accordion.Header className="center">FaZe vs Cloud9</Accordion.Header>
           <Accordion.Body>
             Winner:  FaZe
           </Accordion.Body>
