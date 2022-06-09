@@ -13,10 +13,19 @@
 
 #parent {
     position: relative;
+    text-align: center;
 }
 
 #match-cards {
-    position: absolute;
+    padding: 10px;
     display: flex;
     justify-content: center; 
+    border: 3px solid #14213d;
+    background-color: var(--dark);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.match-modal {
+    display: flex;
+    justify-content: center;
 }
