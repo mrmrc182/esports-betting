@@ -22,7 +22,9 @@ const resolvers = {
     createUser: async (parent, args) => {
       try {
         const user = await User.create({ ...args });
+        console.log(user);
         const token = await signToken(user);
+        console.log(token);
         return { user, token };
       } catch (error) {
         if (error.name === "MongoError" && error.code === 11000) {
