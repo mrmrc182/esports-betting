@@ -15,3 +15,15 @@ export const LOGIN = gql`
     }
   }
 `;
+
+export const PLACE_BET = gql`
+  mutation placeBet($winnerChoice: Int!, $betAmount: Int!) {
+    placeBet(winnerChoice: $winnerChoice, betAmount: $betAmount) {
+      _id
+      userId
+      betAmount
+      winnerChoice
+      matchBet
+    }
+  }
+`;
