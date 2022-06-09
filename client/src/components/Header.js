@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 // import Login from "../pages/Login";
 // import ProtectedPageExample from "../pages/ProtectedPageExample";
 // import SignUp from "../pages/SignUp";
+// import Profile from "../pages/Profile";
 
 export default function Header() {
     const { isLoggedIn, logout } = useAuth();
