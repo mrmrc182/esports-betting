@@ -11,7 +11,7 @@ export default function Header() {
         <header>
             <Navbar collapseOnSelect id="head-nav" expand="lg" bg="dark" variant="dark">
                 <Container>
-                    <Navbar.Brand href="#home">Open Lobby</Navbar.Brand>
+                    <Navbar.Brand href="#home" id="header-font">Open Lobby</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="ms-auto" id="links">

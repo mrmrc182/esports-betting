@@ -4,6 +4,11 @@
     --grey: #e5e5e5;
 }
 
+#header-font{
+    font-family: "Monoton", cursive;
+    font-size: 50px;
+}
+
 #head-nav {
     background-color: var(--dark) !important;
     color: var(--orange) !important;

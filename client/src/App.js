@@ -6,8 +6,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 
 import Matches from './pages/Matches'
-import ProtectedPageExample from "./pages/ProtectedPageExample";
-
+import Leaderboard from "./pages/Leaderboard";
 import Profile from "./pages/Profile";
 
 import SignUp from "./pages/SignUp";
@@ -28,6 +27,7 @@ function App() {
             <Route path="/matches" element={<Matches />} />
 
             <Route path="/profile" element={<Profile />} />
+            <Route path="/leaderboard" element={<Leaderboard />} />
 
             {/* Use <RequiredAuth> for pages that should only be accessible to a
             user that has logged in.*/}
