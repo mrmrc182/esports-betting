@@ -1,0 +1,19 @@
+:root {
+    --dark: #14213d;
+    --orange: #fca311;
+    --grey: #e5e5e5;
+}
+
+.leaderboard-width{
+    width: 80%;
+    text-align: center;
+}
+.leaderboard-title{
+    text-align: center;
+}
+.color{
+    background-color: var(--grey);
+}
+html{
+    background-color: var(--grey);
+}
