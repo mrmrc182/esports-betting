@@ -11,15 +11,13 @@
 
 // config model with lastPollTime
 // environment variable pollInterval
-
 //}
 
 const { MatchPoll } = require("../models");
 const { dateScalar } = require("../schemas/customScalars");
+const fetch = require("node-fetch");
 
 const pollInterval = process.env.POLL_INTERVAL;
-const test = Date.now();
-console.log(test);
 
 const pollMatches = async () => {
   try {
@@ -36,6 +34,20 @@ const pollMatches = async () => {
         const timeTillNextPoll = pollInterval - now - lastPollTime;
         setTimeout(pollMatches, timeTillNextPoll);
       } else {
+        const response = await fetch(
+          "https://api.pandascore.co/csgo/matches/upcoming",
+          {
+            method: "get",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: "Bearer " + process.env.API_AUTH,
+              Accept: "application/json",
+            },
+          }
+        );
+        const data = await response.json();
+        console.log(data);
+
         await MatchPoll.findOneAndUpdate(
           { id: 0 },
           { lastPoll: now },
