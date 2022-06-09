@@ -1,12 +1,13 @@
 import { useAuth } from "../util/auth";
-import {Card} from "react-bootstrap";
+import {Container, Card} from "react-bootstrap";
 import "../styles/Home.css";
 
 
 export default function Home() {
   const { isLoggedIn, user } = useAuth();
   return (
-    <div>
+    <Container className="container-width">
+      <br></br>
       <h1 style={{textAlign: "center"}}>Welcome {isLoggedIn ? user.username : "Guest"} to Open Lobby!</h1>
       <hr />
       <br></br>
@@ -22,6 +23,6 @@ export default function Home() {
         <Card.Body className="background"><h3>Place bets on CS:GO, LoL, Overwatch, Dota 2, and many more!</h3></Card.Body>
       </Card>
       <br></br><br></br>
-    </div>
+    </Container>
   );
 }
