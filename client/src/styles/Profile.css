@@ -1,3 +1,17 @@
+:root {
+    --dark: #14213d;
+    --orange: #fca311;
+    --grey: #e5e5e5;
+}
+
 .center{
     text-align: center;
+    background-color: var(--grey);
+}
+.container-width{
+    width: 80%;
+    text-align: center;
+}
+.header{
+    background-color: #14213d!important;
 }
