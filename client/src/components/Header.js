@@ -2,13 +2,14 @@ import { useAuth } from "../util/auth";
 import { Navbar, Container, Button } from "react-bootstrap";
 import { Nav } from 'react-bootstrap';
 import { Link } from "react-router-dom";
+import '../styles/Header.css'
 
 
 export default function Header() {
     const { isLoggedIn, logout } = useAuth();
     return (
         <header>
-            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+            <Navbar collapseOnSelect id="head-nav" expand="lg" bg="dark" variant="dark">
                 <Container>
                     <Navbar.Brand href="#home">Open Lobby</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />

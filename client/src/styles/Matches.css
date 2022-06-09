@@ -1,4 +1,22 @@
-#match-cards {
+:root {
+    --dark: #14213d;
+    --orange: #fca311;
+    --grey: #e5e5e5;
+}
+
+
+.match-cont {
     display: flex;
     justify-content: center;
+    background-color: var(--grey);
+}
+
+#parent {
+    position: relative;
+}
+
+#match-cards {
+    position: absolute;
+    display: flex;
+    justify-content: center; 
 }

@@ -5,4 +5,11 @@
 :root {
   font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
+  --dark: #14213d;
+  --orange: #fca311;
+  --grey: #e5e5e5;
+}
+
+html {
+  background-color: var(--grey);
 }

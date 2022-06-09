@@ -1,0 +1,19 @@
+:root {
+    --dark: #14213d;
+    --orange: #fca311;
+    --grey: #e5e5e5;
+}
+
+#head-nav {
+    background-color: var(--dark) !important;
+    color: var(--orange) !important;
+    padding: 50px;
+}
+
+#head-nav a {
+    color: var(--orange);
+}
+
+#head-nav Button {
+    background-color: var(--dark);
+}
