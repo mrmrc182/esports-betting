@@ -4,6 +4,10 @@
     --grey: #e5e5e5;
 }
 
+h2 {
+    color: var(--grey) !important;
+}
+
 .match-cont {
     display: flex;
     justify-content: center;
@@ -55,6 +59,4 @@
     color: var(--orange) !important;
 }
 
-h2 {
-    color: var(--grey) !important;
-}
+

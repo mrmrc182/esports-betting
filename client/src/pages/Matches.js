@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { Card, Modal, Button, Form, Row, Col, Container } from 'react-bootstrap';
+import { Card, Modal, Button, Form } from 'react-bootstrap';
 import '../styles/Matches.css'
 import { useQuery } from "@apollo/client";
 import { UPCOMING_MATCHES } from "../util/queries";
