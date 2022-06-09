@@ -4,8 +4,9 @@
     --grey: #e5e5e5;
 }
 
-h2 {
+.vs {
     color: var(--grey) !important;
+    padding: 20px;
 }
 
 .match-cont {

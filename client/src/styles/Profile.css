@@ -2,10 +2,11 @@
     --dark: #14213d;
     --orange: #fca311;
     --grey: #e5e5e5;
+    --medium-gray: #8f857d;
 }
 
 .center{
-    text-align: center;
+    text-align: center !important;
     background-color: var(--grey);
 }
 .container-width{
@@ -14,4 +15,29 @@
 }
 .header{
     background-color: #14213d!important;
+}
+
+.open-cards .accordion-item {
+    background-color: var(--orange) !important;
+    color: var(--dark) !important;
+}
+
+.closed-cards .accordion-item {
+    background-color: var(--dark) !important;
+    color: var(--orange) !important;
+}
+
+.open-cards .accordion-button {
+    background-color: var(--dark) !important;
+    color: var(--grey) !important;
+}
+
+.closed-cards .accordion-button {
+    background-color: var(--medium-gray) !important;
+    color: var(--grey) !important;
+}
+
+.accordion-button{
+    display: inline-block !important;
+    text-align: center !important;
 }

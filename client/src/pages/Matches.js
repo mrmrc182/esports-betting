@@ -36,7 +36,8 @@ export default function Matches() {
                     </Card>
 
 
-                    <div>
+                    <div className='vs'>
+
                         <h2>
                             VS
                         </h2>
@@ -72,7 +73,7 @@ export default function Matches() {
                         </Card.Body>
                     </Card>
 
-                    <div>
+                    <div className='vs'>
                         <h2>
                             VS
                         </h2>
