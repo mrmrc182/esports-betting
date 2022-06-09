@@ -2,11 +2,11 @@ const path = require("path");
 require("dotenv").config({ path: path.join(__dirname, ".env") });
 const express = require("express");
 const { ApolloServer } = require("apollo-server-express");
-
 const { typeDefs, resolvers } = require("./schemas");
 const db = require("./config/connection");
 const { authMiddleware } = require("./util/auth");
 const { pollMatches } = require("./util/pollmatches");
+const fetch = require("node-fetch");
 
 const PORT = process.env.PORT || 3001;
 
@@ -49,7 +49,7 @@ async function startServer(typeDefs, resolvers) {
     // start listening for requests
     await new Promise((resolve) => app.listen({ port: PORT }, resolve));
 
-    pollMatches();
+    // pollMatches();
 
     console.log(
       `🚀 Apollo Server ready at http://localhost:${PORT}${server.graphqlPath}`

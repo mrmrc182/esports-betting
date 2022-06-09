@@ -46,7 +46,7 @@ const pollMatches = async () => {
           }
         );
         const data = await response.json();
-        console.log(data);
+        // console.log(data);
 
         await MatchPoll.findOneAndUpdate(
           { id: 0 },

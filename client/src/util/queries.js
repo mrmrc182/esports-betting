@@ -10,3 +10,18 @@ export const ME = gql`
     }
   }
 `;
+
+export const UPCOMING_MATCHES = gql`
+  query upcomingMatches {
+    upcomingMatches {
+      _id
+      matchDate
+      teamAName
+      teamAId
+      teamAUrl
+      teamBName
+      teamBId
+      teamBUrl
+    }
+  }
+`;
