@@ -1,3 +1,9 @@
+:root {
+    --dark: #14213d;
+    --orange: #fca311;
+    --grey: #e5e5e5;
+}
+
 .homepage-cards{
     text-align: left; 
     background-color:  lightgray;
@@ -8,4 +14,10 @@
 }
 .background{
     background-color:  lightgray;
+}
+.container-width{
+    width: 80%;
+}
+html{
+    background-color: var(--grey);
 }
