@@ -52,7 +52,7 @@ export default function Login() {
   }
 
   return (
-    <div>
+    <div className="login-cont">
       <h1>Login</h1>
       <hr />
       <form onSubmit={handleSubmit}>

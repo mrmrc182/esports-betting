@@ -1,0 +1,11 @@
+:root {
+    --dark: #14213d;
+    --orange: #fca311;
+    --grey: #e5e5e5;
+}
+
+.login-cont {
+    display: flex;
+    justify-content: center;
+}
+

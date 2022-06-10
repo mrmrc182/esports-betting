@@ -4,11 +4,25 @@
     --grey: #e5e5e5;
 }
 
-.homepage-cards{
+html{
+    background-color: var(--grey);
+}
+
+.home-card {
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))
+}
+
+
+/* .card-cont {
+    background-color: var(--grey);
+}
+
+.homepage-cards-one,
+.homepage-cards-three {
     text-align: left; 
     background-color:  lightgray;
 }
-.homepage-cards-right{
+.homepage-cards-two{
     text-align: right; 
     background-color:  lightgray;
 }
@@ -17,7 +31,4 @@
 }
 .container-width{
     width: 80%;
-}
-html{
-    background-color: var(--grey);
-}
+} */
