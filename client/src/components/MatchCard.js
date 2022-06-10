@@ -6,9 +6,20 @@ import { UPCOMING_MATCHES } from "../util/queries";
 
 export default function MatchCard(props) {
   const [show, setShow] = useState(false);
+  const [choice, setChoice] = useState();
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const setChoiceA = () => {
+    setChoice(props.teamAId);
+    console.log("Set choice to team A", choice);
+  };
+  const setChoiceB = () => {
+    setChoice(props.teamBId);
+    console.log("Set choice to team B", choice);
+  };
+
   return (
     <div className="match-card-container">
       <div className="match-cards" onClick={handleShow}>
@@ -40,7 +51,7 @@ export default function MatchCard(props) {
           <div>{props.date}</div>
         </Modal.Header>
         <Modal.Body className="match-modal">
-          <Card style={{ width: "18rem" }}>
+          <Card style={{ width: "18rem" }} onClick={setChoiceA}>
             <Card.Img variant="top" src={props.teamAUrl} />
             <Card.Body>
               <Card.Title>{props.teamAName}</Card.Title>
@@ -51,7 +62,7 @@ export default function MatchCard(props) {
             <h2>VS</h2>
           </div>
 
-          <Card style={{ width: "18rem" }}>
+          <Card style={{ width: "18rem" }} onClick={setChoiceB}>
             <Card.Img variant="top" src={props.teamBUrl} />
             <Card.Body>
               <Card.Title>{props.teamBName}</Card.Title>

@@ -21,7 +21,9 @@ export default function Matches() {
         data.upcomingMatches.map((match) => (
           <MatchCard
             teamAName={match.teamAName}
+            teamAId={match.teamAId}
             teamBName={match.teamBName}
+            teamBId={match.teamBId}
             teamAUrl={match.teamAUrl}
             teamBUrl={match.teamBUrl}
             date={match.date}
