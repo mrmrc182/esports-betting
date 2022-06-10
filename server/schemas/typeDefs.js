@@ -29,14 +29,13 @@ const typeDefs = gql`
   type Match {
     matchId: Int
     date: String
+    teamAName: String
+    teamAId: Int
+    teamAUrl: String
+    teamBName: String
+    teamBId: Int
+    teamBUrl: String
   }
 `;
 
 module.exports = typeDefs;
-
-// teamAName: String
-// teamAId: Int
-// teamAUrl: String
-// teamBName: String
-// teamBId: Int
-// teamBUrl: String
