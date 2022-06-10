@@ -7,6 +7,9 @@ const { signToken } = require("../util/auth");
 const { dateScalar } = require("./customScalars");
 const fetch = require("node-fetch");
 
+const DEFAULT_IMG_URL =
+  "https://cdn.pandascore.co/images/team/image/3260/SHARKS.png";
+
 const resolvers = {
   Date: dateScalar,
   Query: {
@@ -31,20 +34,30 @@ const resolvers = {
         }
       );
       const data = await response.json();
-      const slicedData = data.slice(0, 10);
-      const relevantData = slicedData.map((obj) => {
-        return {
-          matchId: obj.id,
-          date: obj.scheduled_at,
-          // teamAName: obj.opponents[0].opponent.name,
-          // teamAId: obj.opponents[0].opponent.id,
-          // teamAUrl: obj.opponents[0].opponent.image_url,
-          // teamBName: obj.opponents[1].opponent.name,
-          // teamBId: obj.opponents[1].opponent.id,
-          // teamBUrl: obj.opponents[1].opponent.image_url,
-        };
-      });
-      console.log(relevantData);
+      const slicedData = data.slice(0, 12);
+      const relevantData = slicedData
+        .filter((obj) => obj.opponents.length >= 2)
+        .map((obj) => {
+          let urlA = obj.opponents[0].opponent.image_url;
+          let urlB = obj.opponents[1].opponent.image_url;
+          if (!urlA) {
+            urlA = DEFAULT_IMG_URL;
+          }
+          if (!urlB) {
+            urlB = DEFAULT_IMG_URL;
+          }
+          return {
+            matchId: obj.id,
+            date: obj.scheduled_at,
+            teamAName: obj.opponents[0].opponent.name,
+            teamAId: obj.opponents[0].opponent.id,
+            teamAUrl: urlA,
+            teamBName: obj.opponents[1].opponent.name,
+            teamBId: obj.opponents[1].opponent.id,
+            teamBUrl: urlB,
+          };
+        });
+
       return relevantData;
     },
   },

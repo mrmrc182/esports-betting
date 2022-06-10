@@ -16,13 +16,12 @@ export const UPCOMING_MATCHES = gql`
     upcomingMatches {
       matchId
       date
+      teamAName
+      teamAId
+      teamAUrl
+      teamBName
+      teamBId
+      teamBUrl
     }
   }
 `;
-
-// teamAName
-// teamAId
-// teamAUrl
-// teamBName
-// teamBId
-// teamBUrl
