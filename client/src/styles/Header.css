@@ -1,3 +1,6 @@
+*{
+    font-family: 'Rubik', sans-serif;
+}
 :root {
     --dark: #14213d;
     --orange: #fca311;
@@ -7,6 +10,7 @@
 #header-font{
     font-family: "Monoton", cursive;
     font-size: 50px;
+    text-decoration: none !important;
 }
 
 #head-nav {
@@ -17,6 +21,7 @@
 
 #head-nav a {
     color: var(--orange);
+    text-decoration: underline;
 }
 
 #head-nav Button {
