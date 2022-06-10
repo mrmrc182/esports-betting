@@ -5,7 +5,6 @@ const typeDefs = gql`
   scalar Date
 
   type Query {
-    "Find the logged in user."
     me: User
     upcomingMatches: [Match]
   }
@@ -13,7 +12,6 @@ const typeDefs = gql`
   type Mutation {
     createUser(email: String!, password: String!, username: String!): Auth
     login(username: String!, password: String!): Auth
-    placeBet(winnerChoice: Int!, betAmount: Int!)
   }
 
   type Auth {
@@ -29,8 +27,8 @@ const typeDefs = gql`
   }
 
   type Match {
-    _id: ID!
-    date: Date!
+    matchId: Int
+    date: String
     teamAName: String
     teamAId: Int
     teamAUrl: String

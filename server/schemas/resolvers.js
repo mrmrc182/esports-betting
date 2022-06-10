@@ -5,6 +5,7 @@ const {
 const { User, Bet } = require("../models");
 const { signToken } = require("../util/auth");
 const { dateScalar } = require("./customScalars");
+const fetch = require("node-fetch");
 
 const resolvers = {
   Date: dateScalar,
@@ -17,9 +18,34 @@ const resolvers = {
       }
       return User.findOne({ email: ctx.user.email });
     },
-    upcomingMatches: async (parent) => {
-      console.log("YO");
-      return [];
+    upcomingMatches: async () => {
+      const response = await fetch(
+        "https://api.pandascore.co/csgo/matches/upcoming",
+        {
+          method: "get",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + process.env.API_AUTH,
+            Accept: "application/json",
+          },
+        }
+      );
+      const data = await response.json();
+      const slicedData = data.slice(0, 10);
+      const relevantData = slicedData.map((obj) => {
+        return {
+          matchId: obj.id,
+          date: obj.scheduled_at,
+          teamAName: obj.opponents[0].opponent.name,
+          teamAId: obj.opponents[0].opponent.id,
+          teamAUrl: obj.opponents[0].opponent.image_url,
+          teamBName: obj.opponents[1].opponent.name,
+          teamBId: obj.opponents[1].opponent.id,
+          teamBUrl: obj.opponents[1].opponent.image_url,
+        };
+      });
+      console.log(relevantData);
+      return relevantData;
     },
   },
   Mutation: {
@@ -53,11 +79,10 @@ const resolvers = {
       await user.save();
       return { token, user };
     },
-
-    placeBet: async (parent, args) => {
-      const bet = await Bet.create(args);
-      return bet;
-    },
+    // placeBet: async (parent, args) => {
+    //   const bet = await Bet.create(args);
+    //   return bet;
+    // },
   },
 };
 
