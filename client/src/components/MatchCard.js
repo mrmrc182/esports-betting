@@ -7,25 +7,41 @@ import { UPCOMING_MATCHES } from "../util/queries";
 export default function MatchCard(props) {
   const [show, setShow] = useState(false);
   const [choice, setChoice] = useState();
+  const [betAmount, setBetAmount] = useState("");
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const handleInputChange = (e) => {
+    const { target } = e;
+    const inputValue = target.value;
+    setBetAmount(inputValue);
+  };
+
+  const placeBet = () => {
+    // call mutation
+    console.log(`Choice: ${choice}
+    MatchId: ${props.matchId}
+    Amount: ${betAmount}`);
+  };
+
   const setChoiceA = () => {
     setChoice(props.teamAId);
-    console.log("Set choice to team A", choice);
   };
   const setChoiceB = () => {
     setChoice(props.teamBId);
-    console.log("Set choice to team B", choice);
   };
+  console.log(choice);
 
   return (
     <div className="match-card-container">
-      <div className="match-cards" onClick={handleShow}>
-        <div>{props.date}</div>
-        <Card style={{ width: "18rem" }}>
-          <Card.Img variant="top" src={props.teamAUrl} />
+      <div className="match-cards" >
+        <div className="match-date">
+          {props.date}
+          {props.liveUrl ? <Button href={props.liveUrl} target="_blank" rel="noopener noreferrer" variant="outline-primary" className="watch-live">Watch Live</Button> : <div></div>}
+        </div>
+        <Card style={{ width: "18rem" }} onClick={handleShow}>
+          <Card.Img className="team-image" variant="top" src={props.teamAUrl} />
           <Card.Body>
             <Card.Title>{props.teamAName}</Card.Title>
           </Card.Body>
@@ -35,8 +51,8 @@ export default function MatchCard(props) {
           <h2>VS</h2>
         </div>
 
-        <Card style={{ width: "18rem" }}>
-          <Card.Img variant="top" src={props.teamBUrl} />
+        <Card style={{ width: "18rem" }} onClick={handleShow}>
+          <Card.Img className="team-image" variant="top" src={props.teamBUrl} />
           <Card.Body>
             <Card.Title>{props.teamBName}</Card.Title>
           </Card.Body>
@@ -52,7 +68,7 @@ export default function MatchCard(props) {
         </Modal.Header>
         <Modal.Body className="match-modal">
           <Card style={{ width: "18rem" }} onClick={setChoiceA}>
-            <Card.Img variant="top" src={props.teamAUrl} />
+            <Card.Img className="team-image" variant="top" src={props.teamAUrl} />
             <Card.Body>
               <Card.Title>{props.teamAName}</Card.Title>
             </Card.Body>
@@ -63,7 +79,7 @@ export default function MatchCard(props) {
           </div>
 
           <Card style={{ width: "18rem" }} onClick={setChoiceB}>
-            <Card.Img variant="top" src={props.teamBUrl} />
+            <Card.Img className="team-image" variant="top" src={props.teamBUrl} />
             <Card.Body>
               <Card.Title>{props.teamBName}</Card.Title>
             </Card.Body>
@@ -73,9 +89,9 @@ export default function MatchCard(props) {
           <Form className="bet-form">
             <Form.Group className="mb-3" controlId="formBetInput">
               <Form.Label>Place your bet:</Form.Label>
-              <Form.Control type="text" placeholder="Enter your bet" />
+              <Form.Control value={betAmount} onChange={handleInputChange} type="text" placeholder="Enter your bet" />
             </Form.Group>
-            <Button variant="primary" className="bet-btn">
+            <Button onClick={placeBet} variant="primary" className="bet-btn">
               Place Bet
             </Button>
           </Form>

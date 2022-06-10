@@ -50,6 +50,7 @@ const resolvers = {
           }
           return {
             matchId: obj.id,
+            liveUrl: obj.streams.official.raw_url,
             date: obj.scheduled_at,
             teamAName: obj.opponents[0].opponent.name,
             teamAId: obj.opponents[0].opponent.id,
