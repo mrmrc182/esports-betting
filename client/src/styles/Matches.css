@@ -20,9 +20,8 @@
 .match-card-container {
     position: relative;
     text-align: center;
+    width: 100%;
 }
-
-
 
 .match-cards {
     padding: 10px;
@@ -31,8 +30,9 @@
     border: 3px solid #14213d;
     background-color: var(--dark);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
-    
+    width: 50%;
+    margin: 10px 0;
+    margin-left: 25%;
 }
 
 .match-modal {
