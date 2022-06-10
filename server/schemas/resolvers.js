@@ -36,12 +36,12 @@ const resolvers = {
         return {
           matchId: obj.id,
           date: obj.scheduled_at,
-          teamAName: obj.opponents[0].opponent.name,
-          teamAId: obj.opponents[0].opponent.id,
-          teamAUrl: obj.opponents[0].opponent.image_url,
-          teamBName: obj.opponents[1].opponent.name,
-          teamBId: obj.opponents[1].opponent.id,
-          teamBUrl: obj.opponents[1].opponent.image_url,
+          // teamAName: obj.opponents[0].opponent.name,
+          // teamAId: obj.opponents[0].opponent.id,
+          // teamAUrl: obj.opponents[0].opponent.image_url,
+          // teamBName: obj.opponents[1].opponent.name,
+          // teamBId: obj.opponents[1].opponent.id,
+          // teamBUrl: obj.opponents[1].opponent.image_url,
         };
       });
       console.log(relevantData);

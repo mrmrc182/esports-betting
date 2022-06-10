@@ -11,22 +11,28 @@
 
 .match-cont {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     background-color: var(--grey);
+
 }
 
-#parent {
+.match-card-container {
     position: relative;
     text-align: center;
 }
 
-#match-cards {
+
+
+.match-cards {
     padding: 10px;
     display: flex;
     justify-content: center; 
     border: 3px solid #14213d;
     background-color: var(--dark);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    
 }
 
 .match-modal {
