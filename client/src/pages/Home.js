@@ -1,28 +1,43 @@
 import { useAuth } from "../util/auth";
-import {Container, Card} from "react-bootstrap";
+import { Container, Card, Image } from "react-bootstrap";
 import "../styles/Home.css";
 
 
 export default function Home() {
   const { isLoggedIn, user } = useAuth();
   return (
-    <Container className="container-width">
-      <br></br>
-      <h1 style={{textAlign: "center"}}>Welcome {isLoggedIn ? user.username : "Guest"} to Open Lobby!</h1>
-      <hr />
-      <br></br>
-      <Card className="homepage-cards">
-        <Card.Body className="background"><h3>Play for FREE!</h3></Card.Body>
+    <div className="card-cont">
+
+      <Card className="bg-dark text-white">
+        <Card.Img src={process.env.PUBLIC_URL + 'assets/images/lol-banner.png'} alt="Card image" />
+        <Card.ImgOverlay className="home-card">
+          <Card.Title>Play for FREE!</Card.Title>
+          <Card.Text>
+            No need to purchase currency!
+          </Card.Text>
+        </Card.ImgOverlay>
       </Card>
-      <br></br>
-      <Card className="homepage-cards-right">
-        <Card.Body className="background"><h3>Earn Credits Weekly</h3></Card.Body>
+
+      <Card className="bg-dark text-white">
+        <Card.Img src={process.env.PUBLIC_URL + 'assets/images/valorant.png'} alt="Card image" />
+        <Card.ImgOverlay className="home-card">
+          <Card.Title>Earn Credits Weekly</Card.Title>
+          <Card.Text>
+            You can make your bets and get a re-up of 1000 credits every week!
+          </Card.Text>
+        </Card.ImgOverlay>
       </Card>
-      <br></br>
-      <Card className="homepage-cards">
-        <Card.Body className="background"><h3>Place bets on CS:GO, LoL, Overwatch, Dota 2, and many more!</h3></Card.Body>
+
+      <Card className="bg-dark text-white">
+        <Card.Img src={process.env.PUBLIC_URL + 'assets/images/csgo.jpeg'} alt="Card image" />
+        <Card.ImgOverlay className="home-card">
+          <Card.Title>Card title</Card.Title>
+          <Card.Text>
+            This is a wider card with supporting text below as a natural lead-in to
+            additional content. This content is a little bit longer.
+          </Card.Text>
+        </Card.ImgOverlay>
       </Card>
-      <br></br><br></br>
-    </Container>
+    </div >
   );
 }
