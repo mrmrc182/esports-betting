@@ -22,3 +22,10 @@
 #head-nav Button {
     background-color: var(--dark);
 }
+.padding-right-hamburger {
+    margin: 0 25px !important;
+}
+#links{
+    display: flex !important;
+    text-align: center !important;
+}
