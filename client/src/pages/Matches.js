@@ -18,8 +18,9 @@ export default function Matches() {
       {loading ? (
         <div>loading...</div>
       ) : (
-        data.upcomingMatches.map((match) => (
+        data.upcomingMatches.map((match, index) => (
           <MatchCard
+            key={index}
             teamAName={match.teamAName}
             teamAId={match.teamAId}
             teamBName={match.teamBName}
