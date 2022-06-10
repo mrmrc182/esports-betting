@@ -28,6 +28,7 @@ const typeDefs = gql`
 
   type Match {
     matchId: Int
+    liveUrl: String
     date: String
     teamAName: String
     teamAId: Int

@@ -15,6 +15,7 @@ export const UPCOMING_MATCHES = gql`
   query upcomingMatches {
     upcomingMatches {
       matchId
+      liveUrl
       date
       teamAName
       teamAId
