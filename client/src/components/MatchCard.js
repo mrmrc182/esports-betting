@@ -12,17 +12,11 @@ export default function MatchCard(props) {
   return (
     <div className="match-card-container">
       <div className="match-cards" onClick={handleShow}>
+        <div>{props.date}</div>
         <Card style={{ width: "18rem" }}>
-          <Card.Img
-            variant="top"
-            src={process.env.PUBLIC_URL + "assets/images/faze.jpeg"}
-          />
+          <Card.Img variant="top" src={props.teamAUrl} />
           <Card.Body>
-            <Card.Title>{props.title}</Card.Title>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </Card.Text>
+            <Card.Title>{props.teamAName}</Card.Title>
           </Card.Body>
         </Card>
 
@@ -31,36 +25,25 @@ export default function MatchCard(props) {
         </div>
 
         <Card style={{ width: "18rem" }}>
-          <Card.Img
-            variant="top"
-            src={process.env.PUBLIC_URL + "assets/images/cloud9.jpeg"}
-          />
+          <Card.Img variant="top" src={props.teamBUrl} />
           <Card.Body>
-            <Card.Title>Team B</Card.Title>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </Card.Text>
+            <Card.Title>{props.teamBName}</Card.Title>
           </Card.Body>
         </Card>
       </div>
 
       <Modal className="modal-cont" show={show} onHide={handleClose}>
         <Modal.Header closeButton className="modal-header">
-          <Modal.Title>Team A vs Team B</Modal.Title>
+          <Modal.Title>
+            {props.teamAName} vs {props.teamBName}
+          </Modal.Title>
+          <div>{props.date}</div>
         </Modal.Header>
         <Modal.Body className="match-modal">
           <Card style={{ width: "18rem" }}>
-            <Card.Img
-              variant="top"
-              src={process.env.PUBLIC_URL + "assets/images/faze.jpeg"}
-            />
+            <Card.Img variant="top" src={props.teamAUrl} />
             <Card.Body>
-              <Card.Title>{props.title}</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </Card.Text>
+              <Card.Title>{props.teamAName}</Card.Title>
             </Card.Body>
           </Card>
 
@@ -69,16 +52,9 @@ export default function MatchCard(props) {
           </div>
 
           <Card style={{ width: "18rem" }}>
-            <Card.Img
-              variant="top"
-              src={process.env.PUBLIC_URL + "assets/images/cloud9.jpeg"}
-            />
+            <Card.Img variant="top" src={props.teamBUrl} />
             <Card.Body>
-              <Card.Title>Team B</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </Card.Text>
+              <Card.Title>{props.teamBName}</Card.Title>
             </Card.Body>
           </Card>
         </Modal.Body>

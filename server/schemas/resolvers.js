@@ -7,8 +7,10 @@ const { signToken } = require("../util/auth");
 const { dateScalar } = require("./customScalars");
 const fetch = require("node-fetch");
 
-const DEFAULT_IMG_URL =
+const DEFAULT_IMG_URLA =
   "https://cdn.pandascore.co/images/team/image/3260/SHARKS.png";
+const DEFAULT_IMG_URLB =
+  "https://cdn.pandascore.co/images/team/image/125863/isurus_2020_infocard.png";
 
 const resolvers = {
   Date: dateScalar,
@@ -41,10 +43,10 @@ const resolvers = {
           let urlA = obj.opponents[0].opponent.image_url;
           let urlB = obj.opponents[1].opponent.image_url;
           if (!urlA) {
-            urlA = DEFAULT_IMG_URL;
+            urlA = DEFAULT_IMG_URLA;
           }
           if (!urlB) {
-            urlB = DEFAULT_IMG_URL;
+            urlB = DEFAULT_IMG_URLB;
           }
           return {
             matchId: obj.id,

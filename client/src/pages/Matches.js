@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Card, Modal, Button, Form } from "react-bootstrap";
+
 import "../styles/Matches.css";
 import { useQuery } from "@apollo/client";
 import { UPCOMING_MATCHES } from "../util/queries";
@@ -18,7 +18,15 @@ export default function Matches() {
       {loading ? (
         <div>loading...</div>
       ) : (
-        data.upcomingMatches.map((match) => <MatchCard title={match.matchId} />)
+        data.upcomingMatches.map((match) => (
+          <MatchCard
+            teamAName={match.teamAName}
+            teamBName={match.teamBName}
+            teamAUrl={match.teamAUrl}
+            teamBUrl={match.teamBUrl}
+            date={match.date}
+          />
+        ))
       )}
     </div>
   );
