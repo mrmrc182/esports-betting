@@ -11,7 +11,7 @@ export default function Profile() {
       <h1>Open Bets</h1>
       <div className="open-cards">
         <Container className="container-width">
-          <Accordion defaultActiveKey="0">
+          <Accordion>
             <Accordion.Item className="center prof-cards" eventKey="0">
               <Accordion.Header className="header">
                 FaZe vs Cloud9
@@ -29,7 +29,7 @@ export default function Profile() {
         <Container className="container-width">
           <br></br>
           <h1>Closed Bets</h1>
-          <Accordion defaultActiveKey="0">
+          <Accordion>
             <Accordion.Item eventKey="0" className="prof-cards">
               <Accordion.Header>FaZe vs Cloud9</Accordion.Header>
               <Accordion.Body>Winner: FaZe</Accordion.Body>
