@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
 import { useAuth } from "../util/auth";
+import "../styles/Signup.css";
 
 // This signup form is intentionally minimalist to reduce effort required to
 // customize it to your app's needs. See the excellent best practices guide for
@@ -51,11 +52,11 @@ export default function SignUp() {
   }
   return (
     <div>
-      <h1>Sign Up</h1>
+      <h1 className="center">Sign Up</h1>
       <hr />
       <form onSubmit={handleSubmit}>
-        <div style={styles.formControl}>
-          <label htmlFor="username" style={styles.label}>
+        <div style={styles.formControl} className="center">
+          <label htmlFor="username" style={styles.label} className="label">
             Username
           </label>
           <input
@@ -69,8 +70,8 @@ export default function SignUp() {
             onChange={handleInputChange}
           />
         </div>
-        <div style={styles.formControl}>
-          <label htmlFor="email" style={styles.label}>
+        <div style={styles.formControl} className="center">
+          <label htmlFor="email" style={styles.label} className="label">
             Email
           </label>
           <input
@@ -83,8 +84,8 @@ export default function SignUp() {
             onChange={handleInputChange}
           />
         </div>
-        <div style={styles.formControl}>
-          <label htmlFor="new-password" style={styles.label}>
+        <div style={styles.formControl} className="center">
+          <label htmlFor="new-password" style={styles.label} className="label">
             Password
           </label>
           <input
@@ -97,7 +98,7 @@ export default function SignUp() {
             onChange={handleInputChange}
           />
         </div>
-        <div style={styles.formControl}>
+        <div style={styles.formControl} className="center">
           <button disabled={loading} type="submit">
             {loading ? "Loading..." : "Submit"}
           </button>

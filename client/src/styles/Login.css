@@ -9,3 +9,11 @@
     justify-content: center;
 }
 
+.center{
+    display: flex;
+    justify-content: center !important;
+    padding-top: 15px;
+}
+.label{
+    text-align: left !important;
+}

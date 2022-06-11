@@ -52,12 +52,12 @@ export default function Login() {
   }
 
   return (
-    <div className="login-cont">
-      <h1>Login</h1>
+    <div>
+      <h1 className="center">Login</h1>
       <hr />
       <form onSubmit={handleSubmit}>
-        <div style={styles.formControl}>
-          <label htmlFor="email" style={styles.label}>
+        <div style={styles.formControl} className="center">
+          <label htmlFor="email" style={styles.label} className="label">
             Email
           </label>
           <input
@@ -70,8 +70,8 @@ export default function Login() {
             onChange={handleInputChange}
           />
         </div>
-        <div style={styles.formControl}>
-          <label htmlFor="new-password" style={styles.label}>
+        <div style={styles.formControl} className="center">
+          <label htmlFor="new-password" style={styles.label} className="label">
             Password
           </label>
           <input
@@ -84,7 +84,7 @@ export default function Login() {
             onChange={handleInputChange}
           />
         </div>
-        <div style={styles.formControl}>
+        <div style={styles.formControl} className="center">
           <button disabled={loading} type="submit">
             {loading ? "Loading..." : "Submit"}
           </button>
