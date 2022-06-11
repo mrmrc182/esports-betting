@@ -53,8 +53,7 @@ export default function Login() {
 
   return (
     <div>
-      <h1 className="center">Login</h1>
-      <hr />
+      <h1 className="center" id="bottom">Login</h1>
       <form onSubmit={handleSubmit}>
         <div style={styles.formControl} className="center">
           <label htmlFor="email" style={styles.label} className="label">

@@ -52,8 +52,7 @@ export default function SignUp() {
   }
   return (
     <div>
-      <h1 className="center">Sign Up</h1>
-      <hr />
+      <h1 className="center" id="bottom">Sign Up</h1>
       <form onSubmit={handleSubmit}>
         <div style={styles.formControl} className="center">
           <label htmlFor="username" style={styles.label} className="label">

@@ -17,3 +17,6 @@
 .label{
     text-align: left !important;
 }
+#bottom{
+    margin-bottom: 0;
+}
