@@ -2,23 +2,29 @@ import React, { useState, useEffect } from "react";
 
 import "../styles/Matches.css";
 import { useQuery } from "@apollo/client";
-import { UPCOMING_MATCHES } from "../util/queries";
+import { UPCOMING_MATCHES, ME } from "../util/queries";
 import MatchCard from "../components/MatchCard";
 
 export default function Matches() {
-  const { loading, data } = useQuery(UPCOMING_MATCHES, {
+  const matchQuery = useQuery(UPCOMING_MATCHES, {
     fetchPolicy: "no-cache",
   });
-  console.log(loading, data);
+  console.log(matchQuery.loading, matchQuery.data);
+
+  const meQuery = useQuery(ME, {
+    // skip cache for demonstration
+    fetchPolicy: "network-only",
+  });
+  console.log("me", meQuery.loading, meQuery.data);
 
   return (
     <div className="match-cont">
       <h1>Match-ups</h1>
 
-      {loading ? (
+      {matchQuery.loading ? (
         <div>loading...</div>
       ) : (
-        data.upcomingMatches.map((match, index) => (
+        matchQuery.data.upcomingMatches.map((match, index) => (
           <MatchCard
             key={index}
             liveUrl={match.liveUrl}
