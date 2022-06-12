@@ -1,11 +1,57 @@
-.center{
+:root {
+    --dark: #14213d;
+    --orange: #fca311;
+    --grey: #e5e5e5;
+}
+
+body {
+    background-image: url('../../public/assets/images/login-bg.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    content: " ";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;overflow: visible;
+}
+
+.signup-box {
     display: flex;
-    justify-content: center !important;
-    padding-top: 15px;
+    justify-content: center;
+    margin-top: 50px;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75));
+    border-radius: 10px;
 }
-.label{
-    text-align: left !important;
+
+.signup-cont {
+    display: flex;
+    justify-content: center;
 }
-#bottom{
-    margin-bottom: 0;
+
+.signup-title {
+    color: var(--grey);
+    padding-left: 55px;
+    padding-top: 10px;
+}
+
+.form-label {
+    color: var(--grey);
+}
+
+.form-cont {
+    width: 100%;
+    padding-left: 70px;
+    justify-content: center;
+}
+
+.signup-btn {
+    margin-bottom: 20px;
+    margin-left: 90px;
+    border-color: var(--orange) !important;
+    color: var(--orange) !important;
+}
+
+.signup-btn:hover {
+    color: var(--dark) !important;
+    background-color: var(--orange) !important;
 }
