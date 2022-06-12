@@ -11,7 +11,9 @@ export default function Home() {
       <Card className="bg-dark text-white">
         <Card.Img src={process.env.PUBLIC_URL + 'assets/images/lol-banner.png'} alt="Card image" />
         <Card.ImgOverlay className="home-card">
-          <Card.Title>Play for FREE!</Card.Title>
+          <Card.Title>
+            <h1>Play for FREE!</h1>
+          </Card.Title>
           <Card.Text>
             No need to purchase currency!
           </Card.Text>
@@ -21,7 +23,9 @@ export default function Home() {
       <Card className="bg-dark text-white">
         <Card.Img src={process.env.PUBLIC_URL + 'assets/images/valorant.png'} alt="Card image" />
         <Card.ImgOverlay className="home-card">
-          <Card.Title>Earn Credits Weekly</Card.Title>
+          <Card.Title>
+            <h1>Earn Credits Weekly</h1>
+          </Card.Title>
           <Card.Text>
             You can make your bets and get a re-up of 1000 credits every week!
           </Card.Text>
@@ -31,10 +35,11 @@ export default function Home() {
       <Card className="bg-dark text-white">
         <Card.Img src={process.env.PUBLIC_URL + 'assets/images/csgo.jpeg'} alt="Card image" />
         <Card.ImgOverlay className="home-card">
-          <Card.Title>Card title</Card.Title>
+          <Card.Title>
+            <h1>More e-sports coming soon!</h1>
+          </Card.Title>
           <Card.Text>
-            This is a wider card with supporting text below as a natural lead-in to
-            additional content. This content is a little bit longer.
+            Expect more exciting e-sports to be added such as LoL, Overwatch, Valorant and more!
           </Card.Text>
         </Card.ImgOverlay>
       </Card>

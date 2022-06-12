@@ -5,6 +5,11 @@
     --medium-gray: #8f857d;
 }
 
+.bg-image {
+    background-color: var(--grey) !important;
+    background-image: none;
+}
+
 .center{
     text-align: center !important;
     background-color: var(--grey);

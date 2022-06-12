@@ -8,18 +8,6 @@ import "../styles/Signup.css";
 // customize it to your app's needs. See the excellent best practices guide for
 // sign informs on web.dev https://web.dev/sign-in-form-best-practices/
 
-// TODO: customize styles or import styles with favorite css approach
-// const styles = {
-//   formControl: {
-//     display: "flex",
-//     padding: "0.25em",
-//   },
-//   label: {
-//     flex: "0 1 6em",
-//     paddingRight: "0.25em",
-//   },
-// };
-
 const initialFormState = {
   username: "",
   email: "",
