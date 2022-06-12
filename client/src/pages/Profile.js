@@ -6,8 +6,6 @@ export default function Profile() {
   return (
     <div className="center">
       <br></br>
-      <h1>Hello username!</h1>
-      <br></br>
       <h1>Open Bets</h1>
       <div className="open-cards">
         <Container className="container-width">
