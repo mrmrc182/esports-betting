@@ -5,8 +5,9 @@ import "../styles/Profile.css";
 export default function Profile() {
   return (
     <div className="center">
-      <br></br>
-      <h1>Hello username!</h1>
+      <div>
+        <h4 className="credit-score">Credits: 1000</h4>
+      </div>
       <br></br>
       <h1>Open Bets</h1>
       <div className="open-cards">
