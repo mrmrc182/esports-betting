@@ -12,10 +12,14 @@ React Bootstrap and Google Fonts
 
 ## Screenshots
 ### Home Page
+![Screenshot of Open Lobby Home Page](open_lobby_homepage.png)
+
+### Login Page
+![Screenshot of Open Lobby Login Page]()
 
 ### Prediction Page
 
-### Portfolio Page
+### Profile Page
 
 ## Deployed Application
 https://gitgud-open-lobby.herokuapp.com/  
