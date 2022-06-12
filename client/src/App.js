@@ -23,7 +23,6 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
-
             <Route path="/matches" element={<Matches />} />
 
             <Route path="/profile" element={<Profile />} />
@@ -41,6 +40,7 @@ function App() {
             />
           </Routes>
         </AuthProvider>
+
       </Router>
     </ApolloProvider>
   );

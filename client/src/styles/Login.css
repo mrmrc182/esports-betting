@@ -4,7 +4,17 @@
     --grey: #e5e5e5;
 }
 
-body {
+.login-box {
+    margin-top: 50px;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75));
+    border-radius: 10px;
+    max-height: 25%;
+}
+
+.login-cont {
+    display: flex;
+    justify-content: center;
+    height: 100%;
     background-image: url('../../public/assets/images/login-bg.jpeg');
     background-position: center;
     background-repeat: no-repeat;
@@ -13,17 +23,6 @@ body {
     width: 100%;
     height: 100%;
     z-index: -1;overflow: visible;
-}
-
-.login-box {
-    margin-top: 50px;
-    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75));
-    border-radius: 10px;
-}
-
-.login-cont {
-    display: flex;
-    justify-content: center;
 }
 
 .login-title {

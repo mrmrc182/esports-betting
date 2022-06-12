@@ -78,9 +78,9 @@ const authReducer = (state, action) => {
 
 const authCtx = createContext({
   ...defaultState,
-  login: async () => {},
-  logout: async () => {},
-  signup: async () => {},
+  login: async () => { },
+  logout: async () => { },
+  signup: async () => { },
 });
 
 export const AuthProvider = ({ children }) => {
@@ -95,10 +95,8 @@ export const AuthProvider = ({ children }) => {
   const login = async ({ email, password }) => {
     dispatch({ type: LOADING });
     try {
-      // TODO: implement improved validation.
       if (!email || !password) {
-        // TODO: implement improved error message.
-        throw new Error("Auth error. Invalid parameter received.");
+        throw new Error("Lobby closed. Please enter a valid email and password!");
       }
       const { data } = await loginUser({ variables: { email, password } });
       dispatch({ type: LOGIN_SUCCESS, payload: data.login.token });
@@ -111,10 +109,8 @@ export const AuthProvider = ({ children }) => {
   const signup = async ({ email, password, username }) => {
     dispatch({ type: LOADING });
     try {
-      // TODO: implement improved validation.
       if (!email || !password || !username) {
-        // TODO: implement improved error message
-        throw new Error("Auth error. Invalid parameter received.");
+        throw new Error("Lobby closed. Please enter a valid username, email and password!");
       }
 
       const { data } = await createUser({
