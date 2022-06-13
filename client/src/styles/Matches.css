@@ -91,4 +91,8 @@
     color: var(--orange) !important;
 }
 
+.match-date-title{
+    padding-left: 20px;
+}
+
 
