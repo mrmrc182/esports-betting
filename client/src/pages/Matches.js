@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import moment from 'moment';
 import "../styles/Matches.css";
 import { useQuery } from "@apollo/client";
 import { UPCOMING_MATCHES, ME } from "../util/queries";
