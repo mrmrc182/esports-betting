@@ -39,7 +39,7 @@ export default function MatchCard(props) {
       }
       console.log(teamA, teamB, choiceName);
       await placeBet({
-        variables: { userId , choice, matchId, amount, teamA, teamB, choiceName},
+        variables: { userId, choice, matchId, amount, teamA, teamB, choiceName },
       });
     } catch (error) {
       console.log(error);
@@ -134,7 +134,10 @@ export default function MatchCard(props) {
               />
             </Form.Group>
             <Button
-              onClick={handlePlaceBet}
+              onClick={() => {
+                handlePlaceBet();
+                handleClose();
+              }}
               variant="primary"
               className="bet-btn"
             >
