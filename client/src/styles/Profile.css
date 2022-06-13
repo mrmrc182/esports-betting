@@ -5,6 +5,11 @@
     --medium-gray: #8f857d;
 }
 
+.bg-image {
+    background-color: var(--grey) !important;
+    background-image: none;
+}
+
 .center{
     text-align: center !important;
     background-color: var(--grey);
@@ -40,4 +45,13 @@
 .accordion-button{
     display: inline-block !important;
     text-align: center !important;
+}
+.credit-score{
+    background-color: var(--orange);
+    float: right;
+    position: absolute;
+    margin-left: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    padding: 10px;
 }

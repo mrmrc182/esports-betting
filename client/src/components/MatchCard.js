@@ -10,6 +10,9 @@ export default function MatchCard(props) {
   const [choice, setChoice] = useState();
   const [betAmount, setBetAmount] = useState("");
   const [placeBet] = useMutation(PLACE_BET);
+  const [isActiveA, setIsActiveA] = useState(false);
+  const [isActiveB, setIsActiveB] = useState(false);
+
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -41,9 +44,13 @@ export default function MatchCard(props) {
 
   const setChoiceA = () => {
     setChoice(props.teamAId);
+    setIsActiveA(current => !current);
+    setIsActiveB(false);
   };
   const setChoiceB = () => {
     setChoice(props.teamBId);
+    setIsActiveB(current => !current);
+    setIsActiveA(false);
   };
   console.log(choice);
 
@@ -90,15 +97,11 @@ export default function MatchCard(props) {
           <Modal.Title>
             {props.teamAName} vs {props.teamBName}
           </Modal.Title>
-          <div>{props.date}</div>
+          <div className="match-date-title">{props.date}</div>
         </Modal.Header>
         <Modal.Body className="match-modal">
-          <Card style={{ width: "18rem" }} onClick={setChoiceA}>
-            <Card.Img
-              className="team-image"
-              variant="top"
-              src={props.teamAUrl}
-            />
+          <Card style={{ width: "18rem", outline: isActiveA ? '5px solid var(--orange)' : '' }} onClick={setChoiceA} className="team-card">
+            <Card.Img className="team-image" variant="top" src={props.teamAUrl} />
             <Card.Body>
               <Card.Title>{props.teamAName}</Card.Title>
             </Card.Body>
@@ -108,12 +111,8 @@ export default function MatchCard(props) {
             <h2>VS</h2>
           </div>
 
-          <Card style={{ width: "18rem" }} onClick={setChoiceB}>
-            <Card.Img
-              className="team-image"
-              variant="top"
-              src={props.teamBUrl}
-            />
+          <Card style={{ width: "18rem", outline: isActiveB ? '5px solid var(--orange)' : '' }} onClick={setChoiceB} className="team-card">
+            <Card.Img className="team-image" variant="top" src={props.teamBUrl} />
             <Card.Body>
               <Card.Title>{props.teamBName}</Card.Title>
             </Card.Body>

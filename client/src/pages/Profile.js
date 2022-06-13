@@ -13,8 +13,11 @@ export default function Profile() {
 
   return (
     <div className="center">
-      <br></br>
-      <h1>Hello username!</h1>
+
+      <div>
+        <h4 className="credit-score">Credits: 1000</h4>
+      </div>
+
       <br></br>
       <h1>Open Bets</h1>
       <div className="open-cards">
@@ -24,11 +27,13 @@ export default function Profile() {
               <Accordion.Header className="header">
                 FaZe vs Cloud9
               </Accordion.Header>
-              <Accordion.Body>Winner: FaZe</Accordion.Body>
+              <Accordion.Body>Picked to Win: FaZe</Accordion.Body>
+              <Accordion.Body>Bet Amount: 400</Accordion.Body>
             </Accordion.Item>
             <Accordion.Item eventKey="1" className="prof-cards">
               <Accordion.Header>FaZe vs South Korea</Accordion.Header>
-              <Accordion.Body>Winner: South Korea</Accordion.Body>
+              <Accordion.Body>Picked to Win: South Korea</Accordion.Body>
+              <Accordion.Body>Bet Amount: 400</Accordion.Body>
             </Accordion.Item>
           </Accordion>
         </Container>
@@ -41,10 +46,12 @@ export default function Profile() {
             <Accordion.Item eventKey="0" className="prof-cards">
               <Accordion.Header>FaZe vs Cloud9</Accordion.Header>
               <Accordion.Body>Winner: FaZe</Accordion.Body>
+              <Accordion.Body>Bet Amount: 400</Accordion.Body>
             </Accordion.Item>
             <Accordion.Item eventKey="1" className="prof-cards">
               <Accordion.Header>FaZe vs South Korea</Accordion.Header>
               <Accordion.Body>Winner: South Korea</Accordion.Body>
+              <Accordion.Body>Bet Amount: 400</Accordion.Body>
             </Accordion.Item>
           </Accordion>
         </Container>
