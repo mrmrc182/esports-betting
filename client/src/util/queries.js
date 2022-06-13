@@ -34,6 +34,9 @@ export const BETS = gql`
       amount
       choice
       matchId
+      teamA
+      teamB
+      choiceName
     }
   }
 `;

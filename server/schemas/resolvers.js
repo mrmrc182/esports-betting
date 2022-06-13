@@ -104,6 +104,7 @@ const resolvers = {
     },
     placeBet: async (parent, args) => {
       try {
+        console.log({...args});
         const bet = await Bet.create({ ...args });
         return bet;
       } catch (error) {
