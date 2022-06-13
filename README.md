@@ -5,10 +5,10 @@ Open Lobby is a full stack web application where fans of esports can place bets 
 ## Technologies Used
 
 ### Back End
-Pandascore
+Pandascore API, GraphQL, MongoDB, Bcrypt, JWT, Node Fetch
 
 ### Front End
-React Bootstrap and Google Fonts
+React Bootstrap, React JS, HTML/CSS, Google Fonts
 
 ## Screenshots
 ### Home Page
