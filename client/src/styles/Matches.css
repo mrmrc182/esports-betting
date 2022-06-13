@@ -20,6 +20,11 @@
    color: var(--orange) !important;
 }
 
+.team-card:hover {
+    outline: 5px solid var(--orange);
+}
+
+
 .watch-live:hover {
     background-color: var(--orange) !important;
     color: var(--dark) !important;
