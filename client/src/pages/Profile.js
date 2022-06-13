@@ -19,11 +19,13 @@ export default function Profile() {
               <Accordion.Header className="header">
                 FaZe vs Cloud9
               </Accordion.Header>
-              <Accordion.Body>Winner: FaZe</Accordion.Body>
+              <Accordion.Body>Picked to Win: FaZe</Accordion.Body>
+              <Accordion.Body>Bet Amount: 400</Accordion.Body>
             </Accordion.Item>
             <Accordion.Item eventKey="1" className="prof-cards">
               <Accordion.Header>FaZe vs South Korea</Accordion.Header>
-              <Accordion.Body>Winner: South Korea</Accordion.Body>
+              <Accordion.Body>Picked to Win: South Korea</Accordion.Body>
+              <Accordion.Body>Bet Amount: 400</Accordion.Body>
             </Accordion.Item>
           </Accordion>
         </Container>
@@ -36,10 +38,12 @@ export default function Profile() {
             <Accordion.Item eventKey="0" className="prof-cards">
               <Accordion.Header>FaZe vs Cloud9</Accordion.Header>
               <Accordion.Body>Winner: FaZe</Accordion.Body>
+              <Accordion.Body>Bet Amount: 400</Accordion.Body>
             </Accordion.Item>
             <Accordion.Item eventKey="1" className="prof-cards">
               <Accordion.Header>FaZe vs South Korea</Accordion.Header>
               <Accordion.Body>Winner: South Korea</Accordion.Body>
+              <Accordion.Body>Bet Amount: 400</Accordion.Body>
             </Accordion.Item>
           </Accordion>
         </Container>
