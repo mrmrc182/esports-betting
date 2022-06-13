@@ -70,7 +70,7 @@ export default function MatchCard(props) {
           <Modal.Title>
             {props.teamAName} vs {props.teamBName}
           </Modal.Title>
-          <div>{props.date}</div>
+          <div className="match-date-title">{props.date}</div>
         </Modal.Header>
         <Modal.Body className="match-modal">
           <Card style={{ width: "18rem", outline: isActiveA ? '5px solid var(--orange)' : '' }} onClick={setChoiceA} className="team-card">
