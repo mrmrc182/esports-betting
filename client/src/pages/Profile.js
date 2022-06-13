@@ -1,8 +1,16 @@
 import React from "react";
 import { Container, Accordion } from "react-bootstrap";
 import "../styles/Profile.css";
+import { BETS } from "../util/queries";
+import { useQuery } from "@apollo/client";
 
 export default function Profile() {
+
+  const {loading, data} = useQuery(BETS, {
+    fetchPolicy: "no-cache",
+  });
+  console.log(loading, data);
+
   return (
     <div className="center">
       <br></br>

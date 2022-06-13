@@ -7,6 +7,7 @@ import '../styles/Header.css'
 
 export default function Header() {
     const { isLoggedIn, logout } = useAuth();
+
     return (
         <header>
             <Navbar collapseOnSelect id="head-nav" expand="lg" bg="dark" variant="dark">

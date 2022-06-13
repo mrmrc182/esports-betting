@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Card, Modal, Button, Form } from "react-bootstrap";
 import "../styles/Matches.css";
-import { useQuery } from "@apollo/client";
+import { useQuery, useMutation } from "@apollo/client";
 import { UPCOMING_MATCHES } from "../util/queries";
+import { PLACE_BET } from "../util/mutations";
 
 export default function MatchCard(props) {
   const [show, setShow] = useState(false);
   const [choice, setChoice] = useState();
   const [betAmount, setBetAmount] = useState("");
+  const [placeBet] = useMutation(PLACE_BET);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -18,9 +20,21 @@ export default function MatchCard(props) {
     setBetAmount(inputValue);
   };
 
-  const placeBet = () => {
-    // call mutation
-    console.log(`Choice: ${choice}
+  const handlePlaceBet = async () => {
+    try {
+      const userId = props.userId;
+      const matchId = props.matchId;
+      const amount = parseInt(betAmount);
+      console.log(amount);
+      await placeBet({
+        variables: { userId , choice, matchId, amount},
+      });
+    } catch (error) {
+      console.log(error);
+    }
+
+    console.log(`UserId: ${props.userId}
+    Choice: ${choice}
     MatchId: ${props.matchId}
     Amount: ${betAmount}`);
   };
@@ -35,10 +49,22 @@ export default function MatchCard(props) {
 
   return (
     <div className="match-card-container">
-      <div className="match-cards" >
+      <div className="match-cards">
         <div className="match-date">
           {props.date}
-          {props.liveUrl ? <Button href={props.liveUrl} target="_blank" rel="noopener noreferrer" variant="outline-primary" className="watch-live">Watch Live</Button> : <div></div>}
+          {props.liveUrl ? (
+            <Button
+              href={props.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="outline-primary"
+              className="watch-live"
+            >
+              Watch Live
+            </Button>
+          ) : (
+            <div></div>
+          )}
         </div>
         <Card style={{ width: "18rem" }} onClick={handleShow}>
           <Card.Img className="team-image" variant="top" src={props.teamAUrl} />
@@ -68,7 +94,11 @@ export default function MatchCard(props) {
         </Modal.Header>
         <Modal.Body className="match-modal">
           <Card style={{ width: "18rem" }} onClick={setChoiceA}>
-            <Card.Img className="team-image" variant="top" src={props.teamAUrl} />
+            <Card.Img
+              className="team-image"
+              variant="top"
+              src={props.teamAUrl}
+            />
             <Card.Body>
               <Card.Title>{props.teamAName}</Card.Title>
             </Card.Body>
@@ -79,7 +109,11 @@ export default function MatchCard(props) {
           </div>
 
           <Card style={{ width: "18rem" }} onClick={setChoiceB}>
-            <Card.Img className="team-image" variant="top" src={props.teamBUrl} />
+            <Card.Img
+              className="team-image"
+              variant="top"
+              src={props.teamBUrl}
+            />
             <Card.Body>
               <Card.Title>{props.teamBName}</Card.Title>
             </Card.Body>
@@ -89,9 +123,18 @@ export default function MatchCard(props) {
           <Form className="bet-form">
             <Form.Group className="mb-3" controlId="formBetInput">
               <Form.Label>Place your bet:</Form.Label>
-              <Form.Control value={betAmount} onChange={handleInputChange} type="text" placeholder="Enter your bet" />
+              <Form.Control
+                value={betAmount}
+                onChange={handleInputChange}
+                type="text"
+                placeholder="Enter your bet"
+              />
             </Form.Group>
-            <Button onClick={placeBet} variant="primary" className="bet-btn">
+            <Button
+              onClick={handlePlaceBet}
+              variant="primary"
+              className="bet-btn"
+            >
               Place Bet
             </Button>
           </Form>

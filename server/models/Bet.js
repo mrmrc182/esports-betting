@@ -7,11 +7,11 @@ const betSchema = new Schema(
       required: true,
       ref: "User",
     },
-    betAmount: {
+    amount: {
       type: Number,
       required: true,
     },
-    winnerChoice: {
+    choice: {
       type: Number,
       required: true,
     },
@@ -20,9 +20,9 @@ const betSchema = new Schema(
       type: Number,
       default: Date.now(),
     },
-    matchBet: {
-      type: Schema.Types.ObjectId,
-      ref: "Match",
+    matchId: {
+      type: Number,
+      required: true,
     },
   },
   {
