@@ -28,18 +28,22 @@ export default function MatchCard(props) {
       const userId = props.userId;
       const matchId = props.matchId;
       const amount = parseInt(betAmount);
-      console.log(amount);
+      const teamA = props.teamAName;
+      const teamB = props.teamBName;
+      let choiceName = "";
+      if (choice === props.teamAId) {
+        choiceName = props.teamAName;
+      }
+      if (choice === props.teamBId) {
+        choiceName = props.teamBName;
+      }
+      console.log(teamA, teamB, choiceName);
       await placeBet({
-        variables: { userId , choice, matchId, amount},
+        variables: { userId , choice, matchId, amount, teamA, teamB, choiceName},
       });
     } catch (error) {
       console.log(error);
     }
-
-    console.log(`UserId: ${props.userId}
-    Choice: ${choice}
-    MatchId: ${props.matchId}
-    Amount: ${betAmount}`);
   };
 
   const setChoiceA = () => {

@@ -24,6 +24,18 @@ const betSchema = new Schema(
       type: Number,
       required: true,
     },
+    teamA: {
+      type: String,
+      required: true,
+    },
+    teamB: {
+      type: String,
+      required: true,
+    },
+    choiceName: {
+      type: String,
+      required: true,
+    }
   },
   {
     toJSON: {

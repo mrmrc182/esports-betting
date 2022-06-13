@@ -23,7 +23,7 @@ export default function Profile() {
       <div className="open-cards">
         <Container className="container-width">
           <Accordion>
-            <Accordion.Item className="center prof-cards" eventKey="0">
+            <Accordion.Item eventKey="0" className="center prof-cards">
               <Accordion.Header className="header">
                 FaZe vs Cloud9
               </Accordion.Header>

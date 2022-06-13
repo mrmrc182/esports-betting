@@ -17,13 +17,16 @@ export const LOGIN = gql`
 `;
 
 export const PLACE_BET = gql`
-  mutation PlaceBet($userId: String!, $choice: Int!, $matchId: Int!, $amount: Int!) {
-    placeBet(userId: $userId, choice: $choice, matchId: $matchId, amount: $amount) {
+  mutation PlaceBet($userId: String!, $choice: Int!, $matchId: Int!, $amount: Int!, $teamA: String!, $teamB: String!, $choiceName: String!) {
+    placeBet(userId: $userId, choice: $choice, matchId: $matchId, amount: $amount, teamA: $teamA, teamB: $teamB, choiceName: $choiceName) {
       _id
       userId
       choice
       matchId
       amount
+      teamA
+      teamB
+      choiceName
     }
   }
 `;

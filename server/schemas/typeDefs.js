@@ -13,7 +13,7 @@ const typeDefs = gql`
   type Mutation {
     createUser(email: String!, password: String!, username: String!): Auth
     login(email: String!, password: String!): Auth
-    placeBet(userId: String!, choice: Int!, matchId: Int!, amount: Int!): Bet
+    placeBet(userId: String!, choice: Int!, matchId: Int!, amount: Int!, teamA: String!, teamB: String!, choiceName: String!): Bet
   }
 
   type Auth {
@@ -34,6 +34,9 @@ const typeDefs = gql`
     choice: Int!
     matchId: Int!
     amount: Int!
+    teamA: String!
+    teamB: String!
+    choiceName: String!
   }
 
   type Match {
