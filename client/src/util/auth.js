@@ -123,7 +123,7 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  const logout = async () => {
+  const logout = async (navigate) => {
     await client.clearStore();
     dispatch({ type: LOGOUT });
   };

@@ -1,0 +1,5 @@
+{
+    "prettier.enable": false,
+    "prettier.printWidth": 80,
+    "eslint.enable": false
+}

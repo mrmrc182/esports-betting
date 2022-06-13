@@ -4,6 +4,7 @@ import "../styles/Matches.css";
 import { useQuery } from "@apollo/client";
 import { UPCOMING_MATCHES, ME } from "../util/queries";
 import MatchCard from "../components/MatchCard";
+import moment from 'moment';
 
 export default function Matches() {
   const matchQuery = useQuery(UPCOMING_MATCHES, {
@@ -36,6 +37,7 @@ export default function Matches() {
             teamAUrl={match.teamAUrl}
             teamBUrl={match.teamBUrl}
             date={moment(match.date).utc().format('MMMM Do, h:mm a')}
+            userId={meQuery.data.me._id}
           />
         ))
       )}

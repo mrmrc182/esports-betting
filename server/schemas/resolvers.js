@@ -23,6 +23,15 @@ const resolvers = {
       }
       return User.findOne({ email: ctx.user.email });
     },
+    bets: async (parent, args, ctx) => {
+      // if ctx.user is undefined, then no token or an invalid token was
+      // provided by the client.
+      if (!ctx.user) {
+        throw new AuthenticationError("Must be logged in.");
+      }
+      console.log(ctx.user);
+      return Bet.find({ userId: ctx.user._id });
+    },
     upcomingMatches: async () => {
       const response = await fetch(
         "https://api.pandascore.co/csgo/matches/upcoming",
@@ -68,9 +77,7 @@ const resolvers = {
     createUser: async (parent, args) => {
       try {
         const user = await User.create({ ...args });
-        console.log(user);
         const token = await signToken(user);
-        console.log(token);
         return { user, token };
       } catch (error) {
         if (error.name === "MongoError" && error.code === 11000) {
@@ -95,10 +102,14 @@ const resolvers = {
       await user.save();
       return { token, user };
     },
-    // placeBet: async (parent, args) => {
-    //   const bet = await Bet.create(args);
-    //   return bet;
-    // },
+    placeBet: async (parent, args) => {
+      try {
+        const bet = await Bet.create({ ...args });
+        return bet;
+      } catch (error) {
+        throw error;
+      }
+    },
   },
 };
 

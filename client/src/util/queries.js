@@ -26,3 +26,14 @@ export const UPCOMING_MATCHES = gql`
     }
   }
 `;
+
+export const BETS = gql`
+  query bets {
+    bets {
+      userId
+      amount
+      choice
+      matchId
+    }
+  }
+`;
