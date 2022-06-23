@@ -4,42 +4,12 @@
     --grey: #e5e5e5;
 }
 
-.vs {
-    color: var(--grey) !important;
-    padding: 20px;
-}
-
-.match-date {
-    color: var(--orange);
-    margin-right: 10px;
-}
-
-.watch-live {
-   margin-top: 75px;
-   border-color: var(--orange) !important;
-   color: var(--orange) !important;
-}
-
-.team-card:hover {
-    outline: 5px solid var(--orange);
-}
-
-
-.watch-live:hover {
-    background-color: var(--orange) !important;
-    color: var(--dark) !important;
-}
-
 .match-cont {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     background-color: var(--grey);
-}
-
-.team-image {
-        max-width: 25rem;
-        max-height: 15rem;
+    
 }
 
 .match-card-container {
@@ -58,6 +28,38 @@
     width: 50%;
     margin: 10px 0;
     margin-left: 25%;
+}
+
+.vs {
+    color: var(--grey) !important;
+    padding: 20px;
+}
+
+.match-date {
+    color: var(--orange);
+    margin-right: 10px;
+}
+
+.watch-live {
+   margin-top: 75px;
+   border-color: var(--orange) !important;
+   color: var(--orange) !important;
+}
+
+.watch-live:hover {
+    background-color: var(--orange) !important;
+    color: var(--dark) !important;
+}
+
+.team-card:hover {
+    outline: 5px solid var(--orange);
+}
+
+
+
+.team-image {
+        max-width: 25rem;
+        max-height: 15rem;
 }
 
 .match-modal {
