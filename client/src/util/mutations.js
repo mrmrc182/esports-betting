@@ -30,3 +30,12 @@ export const PLACE_BET = gql`
     }
   }
 `;
+
+export const ADJUST_CURRENCY = gql`
+  mutation AdjustCurrency($userId: String!, $amount: Int!) {
+    adjustCurrency(userId: $userId, amount: $amount) {
+      userId
+      amount
+    }
+  }
+`;
