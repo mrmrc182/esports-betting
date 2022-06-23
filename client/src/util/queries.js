@@ -40,3 +40,12 @@ export const BETS = gql`
     }
   }
 `;
+
+export const CURRENCY = gql`
+  query currency {
+    currency {
+      userId
+      amount
+    }
+  }
+`;

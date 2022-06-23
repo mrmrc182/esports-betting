@@ -2,8 +2,9 @@ const {
   AuthenticationError,
   UserInputError,
 } = require("apollo-server-express");
-const { User, Bet } = require("../models");
+const { User, Bet, Currency } = require("../models");
 const { signToken } = require("../util/auth");
+const { checkToAddCurrency } = require("../util/currency");
 const { dateScalar } = require("./customScalars");
 const fetch = require("node-fetch");
 
@@ -29,7 +30,6 @@ const resolvers = {
       if (!ctx.user) {
         throw new AuthenticationError("Must be logged in.");
       }
-      console.log(ctx.user);
       return Bet.find({ userId: ctx.user._id });
     },
     upcomingMatches: async () => {
@@ -72,12 +72,19 @@ const resolvers = {
 
       return relevantData;
     },
+    currency: async (parent, args, ctx) => {
+      if (!ctx.user) {
+        throw new AuthenticationError("Must be logged in.");
+      }
+      return Currency.find({ userId: ctx.user._id });
+    },
   },
   Mutation: {
     createUser: async (parent, args) => {
       try {
         const user = await User.create({ ...args });
         const token = await signToken(user);
+        await Currency.create({ userId: user.id });
         return { user, token };
       } catch (error) {
         if (error.name === "MongoError" && error.code === 11000) {
@@ -100,6 +107,7 @@ const resolvers = {
       const token = await signToken(user);
       user.lastLogin = Date.now();
       await user.save();
+      await checkToAddCurrency(user.id);
       return { token, user };
     },
     placeBet: async (parent, args) => {
@@ -107,6 +115,20 @@ const resolvers = {
         console.log({...args});
         const bet = await Bet.create({ ...args });
         return bet;
+      } catch (error) {
+        throw error;
+      }
+    },
+    adjustCurrency: async(parent, args) => {
+      const { userId, amount } = args;
+      try {
+        const currency = await Currency.findOneAndUpdate(
+          {userId}, 
+          {$inc: { amount }}, 
+          {new: true});
+
+        return currency;
+        
       } catch (error) {
         throw error;
       }
