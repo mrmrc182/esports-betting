@@ -14,12 +14,68 @@
     text-align: center !important;
     background-color: var(--grey);
 }
+
 .container-width{
     width: 80%;
     text-align: center;
 }
-.header{
-    background-color: #14213d!important;
+
+/* Sidebar elements */
+.side-bar {
+    width: 240px;
+    height: 100vh;
+    position: absolute;
+    padding-top: 20px;
+    background-color: var(--medium-gray);
+}
+
+.sidebar div {
+    padding: 8px;
+    display: block;
+}
+
+.credit-score{
+    background-color: var(--orange);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 0 10px;
+}
+
+/* Body elements */
+.prof-body {
+
+    background-image: url('../../public/assets/images/login-bg.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    content: " ";
+    position: absolute;
+    width: 99vw;
+    height: 100vh;
+    z-index: -1;overflow: visible;
+}
+
+.body-el {
+    display: flex;
+    margin-left: 240px;
+    justify-content: center;
+}
+
+.prof-box {
+    width: 75%;
+    height: 90vh;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85));
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+.prof-cards {
+
+}
+
+.open-title,
+.closed-title {
+    padding-top: 40px;
+    color: var(--orange);
 }
 
 .open-cards .accordion-item {
@@ -42,16 +98,7 @@
     color: var(--grey) !important;
 }
 
-.accordion-button{
+.accordion-button {
     display: inline-block !important;
     text-align: center !important;
-}
-.credit-score{
-    background-color: var(--orange);
-    float: right;
-    position: absolute;
-    margin-left: 10px;
-    margin-top: 10px;
-    border-radius: 5px;
-    padding: 10px;
 }
