@@ -78,6 +78,27 @@ const resolvers = {
       }
       return Currency.find({ userId: ctx.user._id });
     },
+    leaderboard: async () => {
+      try {
+        const currency = await Currency
+          .find()
+          .sort({amount:-1})
+          .limit(15)
+          .populate("userId");
+        
+        const leaderboard = currency.map(userValue => {
+          return {
+            username: userValue.userId.username,
+            amount: userValue.amount,
+          }
+        });
+        
+        return leaderboard;
+        
+      } catch (error) {
+        throw error;
+      }
+    },
   },
   Mutation: {
     createUser: async (parent, args) => {

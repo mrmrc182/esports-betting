@@ -49,3 +49,12 @@ export const CURRENCY = gql`
     }
   }
 `;
+
+export const LEADERBOARD = gql`
+  query leaderboard {
+    leaderboard {
+      username
+      amount
+    }
+  }
+`;
