@@ -1,5 +1,5 @@
 import { useAuth } from "../util/auth";
-import { Container, Card, Image } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import "../styles/Home.css";
 
 
@@ -15,7 +15,13 @@ export default function Home() {
             <h1>Play for FREE!</h1>
           </Card.Title>
           <Card.Text>
-            No need to purchase currency!
+            No need to purchase currency! Login daily for 100 free credits.
+          </Card.Text>
+          <Card.Text>
+            Get bonus credits for logging in 7 consectutive days in a row.
+          </Card.Text>
+          <Card.Text>
+            Place your bets and climb the leaderboard to greatness!
           </Card.Text>
         </Card.ImgOverlay>
       </Card>
@@ -24,10 +30,10 @@ export default function Home() {
         <Card.Img src={process.env.PUBLIC_URL + 'assets/images/valorant.png'} alt="Card image" />
         <Card.ImgOverlay className="home-card">
           <Card.Title>
-            <h1>Earn Credits Weekly</h1>
+            <h1>Earn Credits Daily</h1>
           </Card.Title>
           <Card.Text>
-            You can make your bets and get a re-up of 1000 credits every week!
+            You will get 1000 free credits when you signup, then 100 free cedits everyday you login!
           </Card.Text>
         </Card.ImgOverlay>
       </Card>

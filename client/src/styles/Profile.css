@@ -43,15 +43,15 @@
 
 /* Body elements */
 .prof-body {
-
     background-image: url('../../public/assets/images/login-bg.jpeg');
     background-position: center;
     background-repeat: no-repeat;
     content: " ";
     position: absolute;
-    width: 99vw;
+    width: 100vw;
     height: 100vh;
-    z-index: -1;overflow: visible;
+    z-index: -1;
+    overflow: visible;
 }
 
 .body-el {

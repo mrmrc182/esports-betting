@@ -20,7 +20,7 @@ export default function Matches() {
   return (
     <div className="match-cont">
 
-      <h1>Match-ups</h1>
+      <h1 className="match-title">Match-ups</h1>
 
       {matchQuery.loading ? (
         <div>loading...</div>
@@ -40,7 +40,6 @@ export default function Matches() {
             date={moment(match.date).utc().format('MMMM Do, h:mm a')}
             userId={meQuery.data.me._id}
           />
-
         ))
       )}
     </div>
