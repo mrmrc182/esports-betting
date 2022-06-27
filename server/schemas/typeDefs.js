@@ -8,7 +8,8 @@ const typeDefs = gql`
     me: User
     upcomingMatches: [Match]
     bets: [Bet]
-    currency: [Currency]
+    currency: Currency
+    leaderboard: [UserValue]
   }
 
   type Mutation {
@@ -55,6 +56,11 @@ const typeDefs = gql`
 
   type Currency {
     userId: String!
+    amount: Int!
+  }
+
+  type UserValue {
+    username: String!
     amount: Int!
   }
 `;
