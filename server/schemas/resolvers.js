@@ -7,6 +7,7 @@ const { signToken } = require("../util/auth");
 const { checkToAddCurrency } = require("../util/currency");
 const { dateScalar } = require("./customScalars");
 const fetch = require("node-fetch");
+const { ObjectId } = require('mongodb');
 
 const DEFAULT_IMG_URLA =
   "https://cdn.pandascore.co/images/team/image/3260/SHARKS.png";
@@ -22,6 +23,7 @@ const resolvers = {
       if (!ctx.user) {
         throw new AuthenticationError("Must be logged in.");
       }
+      console.log(User.findOne({ email: ctx.user.email }));
       return User.findOne({ email: ctx.user.email });
     },
     bets: async (parent, args, ctx) => {
@@ -69,7 +71,6 @@ const resolvers = {
             teamBUrl: urlB,
           };
         });
-
       return relevantData;
     },
     currency: async (parent, args, ctx) => {
@@ -92,12 +93,43 @@ const resolvers = {
             amount: userValue.amount,
           }
         });
-        
         return leaderboard;
         
       } catch (error) {
         throw error;
       }
+    },
+    rank: async (parent, args, ctx) => {
+      let retval;
+      await Currency.aggregate([
+        {
+           $setWindowFields: {
+              sortBy: { amount: -1 },
+              output: {
+                 rank: {
+                    $rank: {}
+                 }
+              }
+           }
+        },
+        {
+          $match: {
+            userId: ObjectId(ctx.user._id) 
+          }
+        },
+     ],
+     (err, result) => {
+      if (err) {
+        throw err;
+      } else { 
+        retval =  {
+          username: ctx.user.username,
+          rank: result[0].rank
+        };
+      }
+     }
+     );
+     return retval;
     },
   },
   Mutation: {

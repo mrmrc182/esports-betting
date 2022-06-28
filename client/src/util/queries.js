@@ -58,3 +58,12 @@ export const LEADERBOARD = gql`
     }
   }
 `;
+
+export const RANK = gql`
+  query rank {
+    rank {
+      username
+      rank
+    }
+  }
+`;
