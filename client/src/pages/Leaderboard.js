@@ -1,6 +1,6 @@
 import { useQuery } from "@apollo/client";
 import { Container, Table } from "react-bootstrap";
-import { LEADERBOARD } from "../util/queries";
+import { LEADERBOARD, RANK } from "../util/queries";
 import "../styles/Leaderboard.css";
 
 export default function Leaderboard() {
@@ -9,6 +9,11 @@ export default function Leaderboard() {
     fetchPolicy: "no-cache",
   });
   console.log(leaderboardQuery.loading, leaderboardQuery.data);
+
+  const rankQuery = useQuery(RANK, {
+    fetchPolicy: "no-cache",
+  });
+  console.log(rankQuery.loading, rankQuery.data);
 
   return (
     <div className="color">

@@ -10,6 +10,7 @@ const typeDefs = gql`
     bets: [Bet]
     currency: Currency
     leaderboard: [UserValue]
+    rank: Rank
   }
 
   type Mutation {
@@ -63,7 +64,11 @@ const typeDefs = gql`
     username: String!
     amount: Int!
   }
+
+  type Rank {
+    username: String!
+    rank: Int!
+  }
 `;
 
 module.exports = typeDefs;
-// placeBet(userId: String!, choice: Int!, matchId: Int!, amount: Int!): Bet
