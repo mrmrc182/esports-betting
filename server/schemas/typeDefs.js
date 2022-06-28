@@ -67,6 +67,7 @@ const typeDefs = gql`
 
   type Rank {
     username: String!
+    amount: Int!
     rank: Int!
   }
 `;

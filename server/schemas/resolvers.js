@@ -23,7 +23,6 @@ const resolvers = {
       if (!ctx.user) {
         throw new AuthenticationError("Must be logged in.");
       }
-      console.log(User.findOne({ email: ctx.user.email }));
       return User.findOne({ email: ctx.user.email });
     },
     bets: async (parent, args, ctx) => {
@@ -122,8 +121,10 @@ const resolvers = {
       if (err) {
         throw err;
       } else { 
+        console.log(result[0]);
         retval =  {
           username: ctx.user.username,
+          amount: result[0].amount,
           rank: result[0].rank
         };
       }

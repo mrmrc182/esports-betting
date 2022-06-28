@@ -63,6 +63,7 @@ export const RANK = gql`
   query rank {
     rank {
       username
+      amount 
       rank
     }
   }
