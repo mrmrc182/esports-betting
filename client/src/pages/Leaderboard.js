@@ -16,10 +16,11 @@ export default function Leaderboard() {
   console.log(rankQuery.loading, rankQuery.data);
 
   return (
-    <div className="color">
-      <br></br>
-      <h1 className="leaderboard-title">Leaderboard</h1>
-      <br></br>
+    <div className="lead-cont">
+
+      <div className="lead-title">
+        <h1 className="leaderboard-title">Leaderboard</h1>
+      </div>
 
       <Container className="leaderboard-width">
         <Table striped bordered hover variant="dark" size="sm">

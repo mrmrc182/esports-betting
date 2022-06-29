@@ -79,8 +79,8 @@ export default function MatchCard(props) {
         </div>
         <Card style={{ width: "18rem" }} onClick={handleShow}>
           <Card.Img className="team-image" variant="top" src={props.teamAUrl} />
-          <Card.Body>
-            <Card.Title className="team-name">{props.teamAName}</Card.Title>
+          <Card.Body className="team-name">
+            <Card.Title>{props.teamAName}</Card.Title>
           </Card.Body>
         </Card>
 

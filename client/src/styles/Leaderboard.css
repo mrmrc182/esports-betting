@@ -8,12 +8,21 @@
     width: 80%;
     text-align: center;
 }
-.leaderboard-title{
+
+.leaderboard-title {
+    margin: 30px 0;
     text-align: center;
 }
-.color{
-    background-color: var(--grey);
+
+.lead-cont {
+    background-image: url('../../public/assets/images/login-bg.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    content: " ";
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    overflow: visible;
 }
-html{
-    background-color: var(--grey);
-}
+
