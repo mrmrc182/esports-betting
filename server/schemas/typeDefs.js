@@ -8,6 +8,8 @@ const typeDefs = gql`
     me: User
     upcomingMatches: [Match]
     bets: [Bet]
+    openBets: [Bet]
+    closedBets: [Bet]
     currency: Currency
     leaderboard: [UserValue]
     rank: Rank
@@ -41,6 +43,7 @@ const typeDefs = gql`
     teamA: String!
     teamB: String!
     choiceName: String!
+    open: Boolean!
   }
 
   type Match {

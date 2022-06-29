@@ -37,6 +37,37 @@ export const BETS = gql`
       teamA
       teamB
       choiceName
+      open
+    }
+  }
+`;
+
+export const OPEN_BETS = gql`
+  query openBets {
+    openBets {
+      userId
+      amount
+      choice
+      matchId
+      teamA
+      teamB
+      choiceName
+      open
+    }
+  }
+`;
+
+export const CLOSED_BETS = gql`
+  query closedBets {
+    closedBets {
+      userId
+      amount
+      choice
+      matchId
+      teamA
+      teamB
+      choiceName
+      open
     }
   }
 `;

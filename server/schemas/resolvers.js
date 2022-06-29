@@ -34,6 +34,26 @@ const resolvers = {
       }
       return Bet.find({ userId: ctx.user._id });
     },
+    openBets: async (parent, args, ctx) => {
+      // if ctx.user is undefined, then no token or an invalid token was
+      // provided by the client.
+      if (!ctx.user) {
+        throw new AuthenticationError("Must be logged in.");
+      }
+      const bet = await Bet.find({ userId: ctx.user._id })
+      console.log(bet)
+      return bet;
+    },
+    closedBets: async (parent, args, ctx) => {
+      // if ctx.user is undefined, then no token or an invalid token was
+      // provided by the client.
+      if (!ctx.user) {
+        throw new AuthenticationError("Must be logged in.");
+      }
+      const bet = await Bet.find({ userId: ctx.user._id })
+      console.log(bet)
+      return bet;
+    },
     upcomingMatches: async () => {
       const response = await fetch(
         "https://api.pandascore.co/csgo/matches/upcoming",
@@ -77,7 +97,10 @@ const resolvers = {
       if (!ctx.user) {
         throw new AuthenticationError("Must be logged in.");
       }
-      return Currency.find({ userId: ctx.user._id });
+      const currency = await Currency.findOne({ userId: ctx.user._id });
+      const retVal = { userId: currency.userId, amount: currency.amount }
+      console.log(currency)
+      return retVal;
     },
     leaderboard: async () => {
       try {
