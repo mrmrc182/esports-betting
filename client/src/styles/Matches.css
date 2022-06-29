@@ -56,7 +56,7 @@
 .match-cards {
     padding: 10px;
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     border: 3px solid #14213d;
     background-color: var(--dark);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -76,9 +76,9 @@
 }
 
 .watch-live {
-   margin-top: 75px;
-   border-color: var(--orange) !important;
-   color: var(--orange) !important;
+    margin-top: 75px;
+    border-color: var(--orange) !important;
+    color: var(--orange) !important;
 }
 
 .watch-live:hover {
@@ -130,7 +130,7 @@
     color: var(--orange) !important;
 }
 
-.match-date-title{
+.match-date-title {
     padding-left: 20px;
 }
 
@@ -138,16 +138,16 @@
 
 @media (max-width: 480px) {
 
-.team-name{
-position: initial;
-    font-size: 8px !important;
-}
+    .team-name {
+        position: initial;
+        font-size: 8px !important;
+    }
 
-.match-cont{
-    padding-right: 100px;
-}
+    .match-cont {
+        padding-right: 100px;
+    }
 
-    .match-cards {    
+    .match-cards {
         width: 150%;
         height: 150px;
         font-size: 10px;
@@ -155,7 +155,7 @@ position: initial;
     }
 
     .match-card-container {
-   padding-right: 90px;
+        padding-right: 90px;
 
     }
 
@@ -163,17 +163,14 @@ position: initial;
         position: relative;
         max-height: 6rem;
         padding-bottom: 40px;
+    }
+
+    .watch-live {
+        display: none !important;
+    }
+
+    .match-title {
+        padding-left: 100px;
+    }
+
 }
-
-.watch-live {
-display: none !important;
- }
-
- .match-title{
-   padding-left: 100px;
- }
-
-}
-
-
-
