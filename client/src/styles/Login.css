@@ -52,3 +52,21 @@
     color: var(--dark) !important;
     background-color: var(--orange) !important;
 }
+
+@media (max-width: 480px) {
+    .login-box {
+        width: 90%;
+        padding-right: 50px;
+      
+    }
+
+    .login-title {
+        padding-left: 70px;
+    }
+
+    .login-btn {
+        margin-left: 70px;
+    }
+
+
+}

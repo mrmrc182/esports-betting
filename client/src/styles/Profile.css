@@ -68,9 +68,7 @@
     border-radius: 10px;
 }
 
-.prof-cards {
 
-}
 
 .open-title,
 .closed-title {
@@ -101,4 +99,26 @@
 .accordion-button {
     display: inline-block !important;
     text-align: center !important;
+}
+
+
+@media (max-width: 480px) {
+
+    .side-bar {
+position: sticky;
+width: auto;
+height: 150px;
+    }
+
+.prof-box{
+    height: auto;
+    padding-bottom: 10px;
+}
+
+    .body-el {
+        display: flex;
+        margin-left: 1px;
+        justify-content: center;
+    }
+ 
 }

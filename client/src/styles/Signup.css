@@ -55,3 +55,22 @@
     color: var(--dark) !important;
     background-color: var(--orange) !important;
 }
+
+
+@media (max-width: 480px) {
+    .signup-box {
+        width: 90%;
+        padding-right: 50px;
+      
+    }
+
+    .signup-title {
+        padding-left: 60px;
+    }
+
+    .signup-btn {
+        margin-left: 60px;
+    }
+
+
+}
