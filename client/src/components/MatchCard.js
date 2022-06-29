@@ -79,8 +79,8 @@ export default function MatchCard(props) {
         </div>
         <Card style={{ width: "18rem" }} onClick={handleShow}>
           <Card.Img className="team-image" variant="top" src={props.teamAUrl} />
-          <Card.Body>
-            <Card.Title className="title">{props.teamAName}</Card.Title>
+          <Card.Body className="team-name">
+            <Card.Title>{props.teamAName}</Card.Title>
           </Card.Body>
         </Card>
 
@@ -91,7 +91,7 @@ export default function MatchCard(props) {
         <Card style={{ width: "18rem" }} onClick={handleShow}>
           <Card.Img className="team-image" variant="top" src={props.teamBUrl} />
           <Card.Body>
-            <Card.Title className="title">{props.teamBName}</Card.Title>
+            <Card.Title className="team-name">{props.teamBName}</Card.Title>
           </Card.Body>
         </Card>
       </div>
