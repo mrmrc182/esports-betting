@@ -15,7 +15,6 @@ const betSchema = new Schema(
       type: Number,
       required: true,
     },
-
     createdAt: {
       type: Number,
       default: Date.now(),
