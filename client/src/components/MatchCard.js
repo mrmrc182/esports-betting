@@ -38,7 +38,7 @@ export default function MatchCard(props) {
       if (choice === props.teamBId) {
         choiceName = props.teamBName;
       }
-      console.log(teamA, teamB, choiceName);
+      
       await placeBet({
         variables: { userId, choice, matchId, amount, teamA, teamB, choiceName },
       });

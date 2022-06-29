@@ -32,6 +32,7 @@ const resolvers = {
       if (!ctx.user) {
         throw new AuthenticationError("Must be logged in.");
       }
+      // console.log(Bet.find({ userId: ctx.user._id }));
       return Bet.find({ userId: ctx.user._id });
     },
     openBets: async (parent, args, ctx) => {
@@ -40,19 +41,15 @@ const resolvers = {
       if (!ctx.user) {
         throw new AuthenticationError("Must be logged in.");
       }
-      const bet = await Bet.find({ userId: ctx.user._id })
-      console.log(bet)
-      return bet;
-    },
+      return Bet.find({ userId: ctx.user._id });
+    }, 
     closedBets: async (parent, args, ctx) => {
       // if ctx.user is undefined, then no token or an invalid token was
       // provided by the client.
       if (!ctx.user) {
-        throw new AuthenticationError("Must be logged in.");
+        throw new AuthenticationError("Must be logged in."); 
       }
-      const bet = await Bet.find({ userId: ctx.user._id })
-      console.log(bet)
-      return bet;
+      return Bet.find({ userId: ctx.user._id });
     },
     upcomingMatches: async () => {
       const response = await fetch(
