@@ -5,11 +5,46 @@
 }
 
 .match-cont {
+    background-image: url('../../public/assets/images/login-bg.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    content: " ";
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    overflow: visible;
+    background-color: var(--grey);
+}
+
+.card-cont {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: var(--grey);
-    
+}
+
+.card-box {
+    width: 75%;
+    height: 90vh;
+    background-image: linear-gradient(0deg, rgba(15, 15, 15, 0.75), rgba(15, 15, 15, 0.75));
+    margin: 30px 0;
+    border-radius: 10px;
+    overflow-y: scroll;
+}
+
+.team-name {
+    align-self: center;
+}
+
+.match-title,
+.instruct {
+    color: var(--orange);
+    text-align: center;
+    margin-top: 10px;
+}
+
+.loading {
+    color: var(--orange);
 }
 
 .match-card-container {
@@ -55,11 +90,13 @@
     outline: 5px solid var(--orange);
 }
 
-
-
 .team-image {
-        max-width: 25rem;
-        max-height: 15rem;
+    max-width: 25rem;
+    max-height: 15rem;
+}
+
+.team-name {
+    vertical-align: bottom;
 }
 
 .match-modal {

@@ -10,9 +10,10 @@ const fetch = require("node-fetch");
 const { ObjectId } = require('mongodb');
 
 const DEFAULT_IMG_URLA =
-  "https://cdn.pandascore.co/images/team/image/3260/SHARKS.png";
+  "https://steamcdn-a.akamaihd.net/apps/csgo/blog/images/competitive_logo_large.png";
+
 const DEFAULT_IMG_URLB =
-  "https://cdn.pandascore.co/images/team/image/125863/isurus_2020_infocard.png";
+  "https://steamcdn-a.akamaihd.net/apps/csgo/blog/images/competitive_logo_large.png";
 
 const resolvers = {
   Date: dateScalar,
@@ -82,10 +83,10 @@ const resolvers = {
       try {
         const currency = await Currency
           .find()
-          .sort({amount:-1})
+          .sort({ amount: -1 })
           .limit(15)
           .populate("userId");
-        
+
         const leaderboard = currency.map(userValue => {
           return {
             username: userValue.userId.username,
@@ -93,7 +94,7 @@ const resolvers = {
           }
         });
         return leaderboard;
-        
+
       } catch (error) {
         throw error;
       }
@@ -102,35 +103,35 @@ const resolvers = {
       let retval;
       await Currency.aggregate([
         {
-           $setWindowFields: {
-              sortBy: { amount: -1 },
-              output: {
-                 rank: {
-                    $rank: {}
-                 }
+          $setWindowFields: {
+            sortBy: { amount: -1 },
+            output: {
+              rank: {
+                $rank: {}
               }
-           }
+            }
+          }
         },
         {
           $match: {
-            userId: ObjectId(ctx.user._id) 
+            userId: ObjectId(ctx.user._id)
           }
         },
-     ],
-     (err, result) => {
-      if (err) {
-        throw err;
-      } else { 
-        console.log(result[0]);
-        retval =  {
-          username: ctx.user.username,
-          amount: result[0].amount,
-          rank: result[0].rank
-        };
-      }
-     }
-     );
-     return retval;
+      ],
+        (err, result) => {
+          if (err) {
+            throw err;
+          } else {
+            console.log(result[0]);
+            retval = {
+              username: ctx.user.username,
+              amount: result[0].amount,
+              rank: result[0].rank
+            };
+          }
+        }
+      );
+      return retval;
     },
   },
   Mutation: {
@@ -166,23 +167,23 @@ const resolvers = {
     },
     placeBet: async (parent, args) => {
       try {
-        console.log({...args});
+        console.log({ ...args });
         const bet = await Bet.create({ ...args });
         return bet;
       } catch (error) {
         throw error;
       }
     },
-    adjustCurrency: async(parent, args) => {
+    adjustCurrency: async (parent, args) => {
       const { userId, amount } = args;
       try {
         const currency = await Currency.findOneAndUpdate(
-          {userId}, 
-          {$inc: { amount }}, 
-          {new: true});
+          { userId },
+          { $inc: { amount } },
+          { new: true });
 
         return currency;
-        
+
       } catch (error) {
         throw error;
       }

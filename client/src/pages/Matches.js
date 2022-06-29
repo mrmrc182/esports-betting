@@ -19,29 +19,33 @@ export default function Matches() {
 
   return (
     <div className="match-cont">
+      <div className="card-cont">
+        <div className="card-box">
+          <h1 className="match-title">Match-ups</h1>
+          <p className="instruct">Click on a matchup to open the betting box</p>
 
-      <h1 className="match-title">Match-ups</h1>
+          {matchQuery.loading ? (
+            <div className="loading">loading...</div>
+          ) : (
 
-      {matchQuery.loading ? (
-        <div>loading...</div>
-      ) : (
-
-        matchQuery.data.upcomingMatches.map((match, index) => (
-          <MatchCard
-            key={index}
-            liveUrl={match.liveUrl}
-            matchId={match.matchId}
-            teamAName={match.teamAName}
-            teamAId={match.teamAId}
-            teamBName={match.teamBName}
-            teamBId={match.teamBId}
-            teamAUrl={match.teamAUrl}
-            teamBUrl={match.teamBUrl}
-            date={moment(match.date).utc().format('MMMM Do, h:mm a')}
-            userId={meQuery.data.me._id}
-          />
-        ))
-      )}
+            matchQuery.data.upcomingMatches.map((match, index) => (
+              <MatchCard
+                key={index}
+                liveUrl={match.liveUrl}
+                matchId={match.matchId}
+                teamAName={match.teamAName}
+                teamAId={match.teamAId}
+                teamBName={match.teamBName}
+                teamBId={match.teamBId}
+                teamAUrl={match.teamAUrl}
+                teamBUrl={match.teamBUrl}
+                date={moment(match.date).utc().format('MMMM Do, h:mm a')}
+                userId={meQuery.data.me._id}
+              />
+            ))
+          )}
+        </div>
+      </div>
     </div>
   );
 }
