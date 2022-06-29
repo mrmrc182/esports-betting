@@ -35,6 +35,11 @@ const betSchema = new Schema(
     choiceName: {
       type: String,
       required: true,
+    },
+    open: {
+      type: Boolean,
+      required: true,
+      default: true,
     }
   },
   {

@@ -3,13 +3,14 @@ import { Card, Modal, Button, Form } from "react-bootstrap";
 import "../styles/Matches.css";
 import { useQuery, useMutation } from "@apollo/client";
 import { UPCOMING_MATCHES } from "../util/queries";
-import { PLACE_BET } from "../util/mutations";
+import { PLACE_BET, ADJUST_CURRENCY } from "../util/mutations";
 
 export default function MatchCard(props) {
   const [show, setShow] = useState(false);
   const [choice, setChoice] = useState();
   const [betAmount, setBetAmount] = useState("");
   const [placeBet] = useMutation(PLACE_BET);
+  const [adjustCurrency] = useMutation(ADJUST_CURRENCY);
   const [isActiveA, setIsActiveA] = useState(false);
   const [isActiveB, setIsActiveB] = useState(false);
 
@@ -41,6 +42,9 @@ export default function MatchCard(props) {
       await placeBet({
         variables: { userId, choice, matchId, amount, teamA, teamB, choiceName },
       });
+      await adjustCurrency({
+        variables: { userId, amount: amount * -1 }
+      })
     } catch (error) {
       console.log(error);
     }
