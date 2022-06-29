@@ -34,3 +34,16 @@
     display: flex !important;
     text-align: center !important;
 }
+
+
+@media (max-width: 480px) {
+    #header-font{
+        font-size: 40px;
+    }
+
+    #head-nav Button {
+  margin: auto;
+      }
+ 
+ 
+}

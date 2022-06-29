@@ -135,3 +135,45 @@
 }
 
 
+
+@media (max-width: 480px) {
+
+.title{
+position: initial;
+    font-size: 8px !important;
+}
+
+.match-cont{
+    padding-right: 100px;
+}
+
+    .match-cards {    
+        width: 150%;
+        height: 150px;
+        font-size: 10px;
+
+    }
+
+    .match-card-container {
+   padding-right: 90px;
+
+    }
+
+    .team-image {
+        position: relative;
+        max-height: 6rem;
+        padding-bottom: 40px;
+}
+
+.watch-live {
+display: none !important;
+ }
+
+ .match-title{
+   padding-left: 100px;
+ }
+
+}
+
+
+
